@@ -236,7 +236,7 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 2.25rem;
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       position: relative;
@@ -287,9 +287,9 @@
     }
 
     .project-title {
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       font-weight: 600;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.75rem;
       letter-spacing: -0.01em;
       display: flex;
       align-items: center;
@@ -304,9 +304,9 @@
 
     .project-desc {
       color: var(--text-muted);
-      font-size: 0.925rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
     }
 
     .project-tech {
@@ -319,7 +319,7 @@
       font-size: 0.75rem;
       color: #a1a1aa;
       background: rgba(255, 255, 255, 0.04);
-      padding: 0.25rem 0.55rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 4px;
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -597,12 +597,15 @@
         Global Engineering student immersed in <strong>aerodynamics, computational fluid dynamics (CFD)</strong>, dynamic systems simulation, and multidisciplinary design. Bilingual (FR/EN) with leadership experience bridging technical modeling and operational execution.
       </p>
       <div class="hero-links">
-        <a href="#projects" class="btn btn-primary">Explore Engineering Studies</a>
+        <a href="#projects" class="btn btn-primary">Explore CFD Study</a>
+        <a href="https://www.linkedin.com/in/alexandre-fortin-fabbro-82b48622b/" target="_blank" rel="noreferrer" class="btn btn-secondary">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
         <a href="https://github.com/aleforfab" target="_blank" rel="noreferrer" class="btn btn-secondary">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub (@aleforfab)
+          GitHub
         </a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
       </div>
     </section>
 
@@ -611,12 +614,12 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">Selected Engineering Work</h2>
-          <p class="section-desc">Numerical simulations, aerodynamics research, and systems engineering.</p>
+          <p class="section-desc">Numerical simulations, aerodynamics research, and fluid analysis.</p>
         </div>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: Flagship CFD Study -->
+        <!-- Flagship CFD Study -->
         <article class="project-card featured" onclick="openModal('cfd-study')">
           <div>
             <div class="project-meta">
@@ -628,7 +631,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </h3>
             <p class="project-desc">
-              Comparative numerical wind-tunnel investigation simulating baseline airfoils against vortex generator-equipped wings across incidences of 9°, 15°, and 21°. Evaluated boundary layer re-energization, turbulent kinetic energy (k), pathline stall delays, and an 8% lift-to-drag (L/D) gain at high angles of attack.
+              Comparative numerical wind-tunnel investigation simulating baseline airfoils (Wing 1) against vortex generator-equipped wings (Wing 2) across angles of incidence of 9°, 15°, and 21°. Quantified boundary layer re-energization, turbulent kinetic energy (k), pathline stall delays, and an 8% lift-to-drag (L/D) gain at high angles of attack.
             </p>
           </div>
           <div class="project-tech">
@@ -636,77 +639,8 @@
             <span class="tech-pill">Ansys Discovery</span>
             <span class="tech-pill">Ansys Meshing</span>
             <span class="tech-pill">Boundary Layer Control</span>
-            <span class="tech-pill">Turbulence Modeling</span>
+            <span class="tech-pill">Turbulence Kinetic Energy (k)</span>
             <span class="tech-pill">Pressure-Based Solver</span>
-          </div>
-        </article>
-
-        <!-- Project 2: Vehicle Dynamics & STEM Aerodynamics -->
-        <article class="project-card" onclick="openModal('vehicle-aero')">
-          <div>
-            <div class="project-meta">
-              <span class="project-tag">Aerodynamics & Simulation</span>
-              <span class="project-year">Ansys & MathWorks</span>
-            </div>
-            <h3 class="project-title">
-              <span>STEM Racing Aerodynamics & Dimensional Analysis</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </h3>
-            <p class="project-desc">
-              Aerodynamic drag minimization and dimensional similarity studies for high-speed scale racing cars. Scaled flow regimes using Reynolds and Mach similarity to model downforce vs. induced drag tradeoffs.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">Dimensional Analysis</span>
-            <span class="tech-pill">MATLAB</span>
-            <span class="tech-pill">Fluid Similarity</span>
-            <span class="tech-pill">Ansys CFD</span>
-          </div>
-        </article>
-
-        <!-- Project 3: Dynamic Modeling & Control Systems -->
-        <article class="project-card" onclick="openModal('dynamic-systems')">
-          <div>
-            <div class="project-meta">
-              <span class="project-tag">Systems & Control</span>
-              <span class="project-year">MathWorks Suite</span>
-            </div>
-            <h3 class="project-title">
-              <span>Multiphysics Dynamic Modeling & State-Machine Control</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </h3>
-            <p class="project-desc">
-              Physical system modeling and logic control architectures using Simscape and Stateflow. Modeled multi-domain mechanical-electrical interactions, transient dynamics, and finite state machines.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">Simulink</span>
-            <span class="tech-pill">Simscape</span>
-            <span class="tech-pill">Stateflow</span>
-            <span class="tech-pill">Control Systems</span>
-          </div>
-        </article>
-
-        <!-- Project 4: CAD & Operations -->
-        <article class="project-card" onclick="openModal('cad-ops')">
-          <div>
-            <div class="project-meta">
-              <span class="project-tag">Product Design & Operations</span>
-              <span class="project-year">PTC & Artmémis</span>
-            </div>
-            <h3 class="project-title">
-              <span>Parametric CAD & Operational Systems Architecture</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </h3>
-            <p class="project-desc">
-              Part design and kinematic assemblies in Onshape paired with operational leadership as VP of Artmémis Spiritueux — managing corporate regulatory filings, digital platforms, supply chain logistics, and new product commercialization.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">PTC Onshape</span>
-            <span class="tech-pill">Parametric Modeling</span>
-            <span class="tech-pill">Regulatory Filings</span>
-            <span class="tech-pill">E-Commerce & Supply Chain</span>
           </div>
         </article>
       </div>
@@ -891,7 +825,7 @@
         </div>
 
         <div class="stack-category">
-          <div class="stack-cat-title">AI & Productivity</div>
+          <div class="stack-cat-title">AI & Tools</div>
           <div class="stack-items">
             <span>Anthropic MCP Tooling</span>
             <span>Claude Prompt Engineering</span>
@@ -908,14 +842,23 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">Get In Touch</h2>
-          <p class="section-desc">Currently open for full-time engineering internships and collaborative research projects.</p>
+          <p class="section-desc">Currently open for full-time engineering internships and collaborative technical opportunities.</p>
         </div>
       </div>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="mailto:Alexandre.fortin.fabbro.2007@gmail.com" class="btn btn-primary">Email Me (Alexandre.fortin.fabbro.2007@gmail.com)</a>
-        <a href="tel:5816819787" class="btn btn-secondary">Call: (581) 681-9787</a>
-        <a href="https://github.com/aleforfab" target="_blank" rel="noreferrer" class="btn btn-secondary">GitHub Profile</a>
+        <a href="mailto:Alexandre.fortin.fabbro.2007@gmail.com" class="btn btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Alexandre.fortin.fabbro.2007@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/alexandre-fortin-fabbro-82b48622b/" target="_blank" rel="noreferrer" class="btn btn-secondary">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn Profile
+        </a>
+        <a href="https://github.com/aleforfab" target="_blank" rel="noreferrer" class="btn btn-secondary">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Profile
+        </a>
       </div>
 
       <footer>
@@ -978,33 +921,6 @@
             <li><strong>Incidence 15°:</strong> Transition regime; both wings show comparable L/D (1.64 vs 1.62). Stall onset on Wing 2 is delayed by roughly one step of attack angle.</li>
             <li><strong>Incidence 21° (Pre-stall):</strong> Clear superiority of vortex generators. Wing 1 breaks into large dual-vortex recirculation with dropping finesse (1.64 → 1.60), while Wing 2 suppresses secondary recirculation and elevates finesse to <strong>1.73</strong>.</li>
           </ul>
-        `
-      },
-      'vehicle-aero': {
-        body: `
-          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);">FLUID SIMILARITY</span>
-          <h3 style="font-size: 1.45rem; margin: 0.5rem 0 0.75rem; color: #fff;">STEM Racing Car Aerodynamics</h3>
-          <p style="color: #a1a1aa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
-            Completed official Ansys aerodynamic certification focusing on racecar downforce vs. profile drag. Applied dimensional analysis principles (Buckingham Π theorem, Reynolds and Mach similarity) to validate scale models against wind-tunnel experimental criteria.
-          </p>
-        `
-      },
-      'dynamic-systems': {
-        body: `
-          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);">MATHWORKS CONTROLS</span>
-          <h3 style="font-size: 1.45rem; margin: 0.5rem 0 0.75rem; color: #fff;">Dynamic Simulation in Simscape & Stateflow</h3>
-          <p style="color: #a1a1aa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
-            Modeled physical systems with mixed mechanical, electrical, and thermal boundaries in Simscape. Built finite state-machine control logic in Stateflow to govern transitions, fault detections, and system states.
-          </p>
-        `
-      },
-      'cad-ops': {
-        body: `
-          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);">DESIGN & LEADERSHIP</span>
-          <h3 style="font-size: 1.45rem; margin: 0.5rem 0 0.75rem; color: #fff;">Onshape Parametric CAD & Artmémis Operations</h3>
-          <p style="color: #a1a1aa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
-            Combined PTC Onshape 3D modeling skills with executive responsibility at <em>Artmémis Spiritueux</em>. Built production-ready digital architectures, ensured governmental regulatory compliances, and coordinated logistics for product scaling.
-          </p>
         `
       }
     };
