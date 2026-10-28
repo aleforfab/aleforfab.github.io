@@ -19,7 +19,8 @@ Live: <https://aleforfab.github.io/>
 | `assets/css/main.css` | Design tokens, layout, components, responsive and reduced-motion rules. |
 | `assets/js/flow.js` | Interactive potential-flow (Joukowski) streamline panel drawn on `<canvas>`; loaded only by the CFD case study. |
 | `assets/js/main.js` | Navigation, scroll spy, field explorer, lightbox, counters, copy-to-clipboard, shared by the hub and every project page. |
-| `assets/heat/*.webp` | Solver screenshots for the heat-sink study: the conjugate field in Fluent and the conduction-only thermal FEA. |
+| `assets/heat/*.webp` | Solver screenshot for the heat-sink study: the conduction-only thermal FEA that motivated the coupled model. |
+| `assets/logos/*.svg` | Issuer marks for the certification grid, flattened to one colour. |
 | `assets/cfd/*.webp` | Figures cropped out of the CFD report: pathlines, velocity and turbulence fields for both wings at 9°, 15° and 21°. |
 | `assets/fonts/*.woff2` | Self-hosted variable fonts (Space Grotesk, Inter, JetBrains Mono), with no third-party font request. |
 | `assets/docs/Alexandre_Fortin_Fabbro_CV.pdf` | One-page CV, served from the Résumé links. |

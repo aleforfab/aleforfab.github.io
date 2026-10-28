@@ -1479,25 +1479,17 @@ button {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 28px;
   border: 1px solid var(--line-strong);
-  border-radius: 7px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.035);
-  color: var(--text-soft);
 }
-.cert__mark svg { width: 15px; height: 15px; display: block; }
-/* the Ansys symbol is a wordmark, so it needs width rather than height */
-.cert__mark--lockup { width: auto; padding-inline: 7px; }
-.cert__mark--lockup svg { width: 30px; height: 15px; }
-.cert__mark:not(:has(svg)) {
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--muted);
-}
-.cert:hover .cert__mark { border-color: var(--accent-line); color: var(--accent-ink); }
+.cert__mark img { display: block; width: auto; height: 16px; max-width: 20px; object-fit: contain; }
+/* wordmarks (Ansys, IBM) are wide and short, so they get a wider chip */
+.cert__mark--lockup { width: auto; padding-inline: 8px; }
+.cert__mark--lockup img { height: 13px; max-width: 40px; }
+.cert:hover .cert__mark { border-color: var(--accent-line); background: rgba(59, 130, 246, 0.1); }
 .cert__name {
   font-family: var(--font-body);
   font-size: 0.88rem;
@@ -2177,6 +2169,8 @@ button {
   font-size: 0.68rem;
   color: var(--muted);
 }
+/* one figure: full measure, but not stretched into a 900px-tall slab */
+.plate--single { max-width: 880px; margin-top: 1.25rem; }
 .plate img {
   display: block;
   width: 100%;
