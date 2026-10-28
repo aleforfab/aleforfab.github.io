@@ -984,8 +984,9 @@ button {
 .field__frame img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 4px;
+  /* identical framing for both wings is essential to an honest comparison */
+  object-fit: cover;
+  object-position: center;
 }
 .field__zoom {
   position: absolute;
@@ -1098,10 +1099,17 @@ button {
 .chart__series--w2 text { fill: var(--alt-ink); }
 
 .chart__marker line {
-  stroke: rgba(255, 255, 255, 0.28);
+  stroke: rgba(255, 255, 255, 0.24);
   stroke-width: 1;
   stroke-dasharray: 3 4;
 }
+.chart__marker text {
+  fill: #6ee7b7;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.chart__axis text { font-size: 10.5px; }
 .chart__foot {
   margin-top: 0.5rem;
   font-size: 0.76rem;
