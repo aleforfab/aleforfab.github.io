@@ -242,9 +242,11 @@
     if (window.FlowField) window.FlowField.setAngle(deg);
   }
 
-  initRadios('.instrument__controls .segmented', function (item) {
-    setAngle(parseInt(item.getAttribute('data-aoi'), 10));
-  });
+  if ($('.instrument__controls .segmented')) {
+    initRadios('.instrument__controls .segmented', function (item) {
+      setAngle(parseInt(item.getAttribute('data-aoi'), 10));
+    });
+  }
 
   /* ======================================================================
      8. Field explorer (tabs + incidence)
@@ -253,26 +255,26 @@
     pathlines: {
       label: 'pathlines',
       '09': {
-        a: { src: 'assets/cfd/pathlines-09-baseline.webp', w: 419, h: 224,
+        a: { src: 'assets/cfd/pathlines-09-baseline.webp', w: 1000, h: 539,
              alt: 'Pathlines at 9 degrees around the baseline wing: streamlines converge at the leading edge with a small closed recirculation just above it.',
              cap: 'Small leading-edge recirculation already visible at 9°.' },
-        b: { src: 'assets/cfd/pathlines-09-vg.webp', w: 356, h: 189,
+        b: { src: 'assets/cfd/pathlines-09-vg.webp', w: 907, h: 488,
              alt: 'Pathlines at 9 degrees around the vortex-generator wing: streamlines stay attached along the whole upper surface.',
              cap: 'Fully attached over the whole chord — no recirculation yet.' }
       },
       '15': {
-        a: { src: 'assets/cfd/pathlines-15-baseline.webp', w: 350, h: 198,
+        a: { src: 'assets/cfd/pathlines-15-baseline.webp', w: 889, h: 510,
              alt: 'Pathlines at 15 degrees around the baseline wing: the leading-edge vortex persists at a similar size.',
              cap: 'The leading-edge vortex persists, similar in size to 9°.' },
-        b: { src: 'assets/cfd/pathlines-15-vg.webp', w: 353, h: 205,
+        b: { src: 'assets/cfd/pathlines-15-vg.webp', w: 895, h: 525,
              alt: 'Pathlines at 15 degrees around the vortex-generator wing: a small vortex appears for the first time.',
              cap: 'A small vortex appears here for the first time — one step later than the baseline.' }
       },
       '21': {
-        a: { src: 'assets/cfd/pathlines-21-baseline.webp', w: 328, h: 204,
+        a: { src: 'assets/cfd/pathlines-21-baseline.webp', w: 832, h: 525,
              alt: 'Pathlines at 21 degrees around the baseline wing: a large main vortex plus a second, smaller recirculation.',
              cap: 'Large main vortex plus a secondary recirculation: extended separation.' },
-        b: { src: 'assets/cfd/pathlines-21-vg.webp', w: 363, h: 234,
+        b: { src: 'assets/cfd/pathlines-21-vg.webp', w: 923, h: 599,
              alt: 'Pathlines at 21 degrees around the vortex-generator wing: separation limited to a single contained vortex.',
              cap: 'Separation is still there, but confined to one contained vortex.' }
       }
@@ -280,26 +282,26 @@
     velocity: {
       label: 'velocity magnitude',
       '09': {
-        a: { src: 'assets/cfd/velocity-09-baseline.webp', w: 423, h: 223,
+        a: { src: 'assets/cfd/velocity-09-baseline.webp', w: 1000, h: 534,
              alt: 'Velocity magnitude contours at 9 degrees around the baseline wing, with a red accelerated band over the upper surface.',
              cap: 'Speed field, baseline at 9°: the low-momentum region starts to widen behind the profile.' },
-        b: { src: 'assets/cfd/velocity-09-vg.webp', w: 360, h: 189,
+        b: { src: 'assets/cfd/velocity-09-vg.webp', w: 915, h: 487,
              alt: 'Velocity magnitude contours at 9 degrees around the vortex-generator wing.',
              cap: 'Flow stays tied to the upper surface over the full chord.' }
       },
       '15': {
-        a: { src: 'assets/cfd/velocity-15-baseline.webp', w: 352, h: 197,
+        a: { src: 'assets/cfd/velocity-15-baseline.webp', w: 895, h: 509,
              alt: 'Velocity magnitude contours at 15 degrees around the baseline wing.',
              cap: 'A thicker low-speed region develops over the aft upper surface.' },
-        b: { src: 'assets/cfd/velocity-15-vg.webp', w: 360, h: 206,
+        b: { src: 'assets/cfd/velocity-15-vg.webp', w: 913, h: 529,
              alt: 'Velocity magnitude contours at 15 degrees around the vortex-generator wing.',
              cap: 'Nearly superposed with the baseline — the two wings behave alike at this angle.' }
       },
       '21': {
-        a: { src: 'assets/cfd/velocity-21-baseline.webp', w: 323, h: 200,
+        a: { src: 'assets/cfd/velocity-21-baseline.webp', w: 824, h: 514,
              alt: 'Velocity magnitude contours at 21 degrees around the baseline wing, showing a wide low-momentum wake.',
              cap: 'Low-momentum region spreading across the aft section.' },
-        b: { src: 'assets/cfd/velocity-21-vg.webp', w: 372, h: 236,
+        b: { src: 'assets/cfd/velocity-21-vg.webp', w: 944, h: 606,
              alt: 'Velocity magnitude contours at 21 degrees around the vortex-generator wing.',
              cap: 'More momentum retained along the upper surface despite separation.' }
       }
@@ -307,31 +309,44 @@
     tke: {
       label: 'turbulent kinetic energy',
       '09': {
-        a: { src: 'assets/cfd/tke-09-baseline.webp', w: 426, h: 224,
+        a: { src: 'assets/cfd/tke-09-baseline.webp', w: 1000, h: 531,
              alt: 'Turbulent kinetic energy field at 9 degrees around the baseline wing, concentrated near the leading edge.',
              cap: 'Turbulent kinetic energy concentrates in the leading-edge shear layer.' },
-        b: { src: 'assets/cfd/tke-09-vg.webp', w: 364, h: 192,
+        b: { src: 'assets/cfd/tke-09-vg.webp', w: 925, h: 492,
              alt: 'Turbulent kinetic energy field at 9 degrees around the vortex-generator wing.',
              cap: 'Lower k over the chord — the boundary layer is re-energised, not just stirred.' }
       },
       '15': {
-        a: { src: 'assets/cfd/tke-15-baseline.webp', w: 345, h: 195,
+        a: { src: 'assets/cfd/tke-15-baseline.webp', w: 878, h: 499,
              alt: 'Turbulent kinetic energy field at 15 degrees around the baseline wing.',
              cap: 'k stays focused near the leading edge.' },
-        b: { src: 'assets/cfd/tke-15-vg.webp', w: 356, h: 205,
+        b: { src: 'assets/cfd/tke-15-vg.webp', w: 907, h: 527,
              alt: 'Turbulent kinetic energy field at 15 degrees around the vortex-generator wing.',
              cap: 'Similar magnitude, shifted slightly aft.' }
       },
       '21': {
-        a: { src: 'assets/cfd/tke-21-baseline.webp', w: 327, h: 203,
+        a: { src: 'assets/cfd/tke-21-baseline.webp', w: 833, h: 519,
              alt: 'Turbulent kinetic energy field at 21 degrees around the baseline wing, with a broad high-k region.',
              cap: 'The high-k region broadens as the separation grows.' },
-        b: { src: 'assets/cfd/tke-21-vg.webp', w: 381, h: 243,
+        b: { src: 'assets/cfd/tke-21-vg.webp', w: 968, h: 620,
              alt: 'Turbulent kinetic energy field at 21 degrees around the vortex-generator wing.',
              cap: 'A more compact high-k zone, matching the smaller separated region.' }
       }
     }
   };
+
+  // project pages live in /projects/, so prefix relative asset paths once
+  var ASSET_BASE = (document.body && document.body.getAttribute('data-base')) || '';
+  if (ASSET_BASE) {
+    Object.keys(FIELDS).forEach(function (q) {
+      Object.keys(FIELDS[q]).forEach(function (a) {
+        ['a', 'b'].forEach(function (k) {
+          var item = FIELDS[q][a][k];
+          if (item && item.src) item.src = ASSET_BASE + item.src;
+        });
+      });
+    });
+  }
 
   var explore = { quantity: 'pathlines', angle: '09' };
   var imgA = $('#field-img-a');
@@ -343,7 +358,7 @@
   var fieldFrames = $$('.field__frame');
 
   function renderFields() {
-    var set = FIELDS[explore.quantity][explore.angle];
+    var set = FIELDS[explore.quantity] && FIELDS[explore.quantity][explore.angle];
     if (!set || !imgA || !imgB) return;
     [[imgA, set.a, capA], [imgB, set.b, capB]].forEach(function (pair) {
       var img = pair[0], data = pair[1], cap = pair[2];
@@ -418,7 +433,7 @@
         cap: heroZoom.getAttribute('data-zoom-caption')
       });
     }
-    var set = FIELDS[explore.quantity][explore.angle];
+    var set = FIELDS[explore.quantity] && FIELDS[explore.quantity][explore.angle];
     if (set) {
       items.push({ src: set.a.src, alt: set.a.alt, cap: 'Wing 1, baseline — ' + FIELDS[explore.quantity].label + ' at ' + parseInt(explore.angle, 10) + '°. ' + set.a.cap });
       items.push({ src: set.b.src, alt: set.b.alt, cap: 'Wing 2, vortex generators — ' + FIELDS[explore.quantity].label + ' at ' + parseInt(explore.angle, 10) + '°. ' + set.b.cap });

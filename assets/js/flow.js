@@ -129,8 +129,8 @@
     var cx = (minX + maxX) / 2;
     var cy = (minY + maxY) / 2;
 
-    // the profile takes roughly 46% of the width and 40% of the height
-    var scale = Math.min(w / (spanX / 0.46), h / (spanY / 0.40));
+    // the profile takes roughly 46% of the width and 50% of the height
+    var scale = Math.min(w / (spanX / 0.46), h / (spanY / 0.50));
 
     state.scale = scale;
     state.ox = w / 2 - cx * scale;
