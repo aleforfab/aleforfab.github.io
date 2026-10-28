@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Conical pin-fin heat sink — case study · Alexandre Fortin-Fabbro</title>
+<title>Conical pin-fin heat sink | case study · Alexandre Fortin-Fabbro</title>
 <meta name="description" content="Thermal design case study: a MATLAB conjugate heat-transfer model of a conical pin-fin heat sink, with Elenbaas correlations standing in for natural convection where structural FEA falls short." />
 <meta name="author" content="Alexandre Fortin-Fabbro" />
 <meta name="theme-color" content="#08090c" />
 <link rel="canonical" href="https://aleforfab.github.io/projects/pin-fin-heat-sink.html" />
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Conical pin-fin heat sink — case study" />
+<meta property="og:title" content="Conical pin-fin heat sink | case study" />
 <meta property="og:description" content="A MATLAB conjugate heat-transfer model coupling thermal FEA with natural-convection correlations." />
 <meta property="og:url" content="https://aleforfab.github.io/projects/pin-fin-heat-sink.html" />
 <meta property="og:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Conical pin-fin heat sink — case study" />
+<meta name="twitter:title" content="Conical pin-fin heat sink | case study" />
 <meta name="twitter:description" content="Thermal FEA and natural-convection correlations in MATLAB." />
 <meta name="twitter:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 
@@ -104,7 +104,7 @@
             metal without modelling the air optimises the wrong thing.
           </p>
           <p>
-            The aim was a heat sink that removes the same heat with less material — and to build the analysis
+            The aim was a heat sink that removes the same heat with less material, and to build the analysis
             engine behind that claim rather than trust a black box.
           </p>
         </div>
@@ -131,7 +131,7 @@
           <li>
             <span class="method__step">04</span>
             <h3>Compare and trade</h3>
-            <p>Each configuration is compared on junction temperature and total mass — the two numbers that decide whether a design is worth manufacturing.</p>
+            <p>Each configuration is compared on junction temperature and total mass, the two numbers that decide whether a design is worth manufacturing.</p>
           </li>
         </ol>
       </section>
@@ -185,7 +185,7 @@
             </g>
           </svg>
           <figcaption>
-            Schematic cross-section only — not the SolidWorks geometry. Heat enters through the base and leaves
+            Schematic cross-section only, not the SolidWorks geometry. Heat enters through the base and leaves
             through the fins; the convective coefficient on those fin surfaces comes from Elenbaas correlations.
           </figcaption>
         </figure>
@@ -215,7 +215,7 @@
           <p>
             These are model outputs, not bench measurements. The coupling is the part to scrutinise: using
             correlations instead of solving the flow field means the design is only as good as the
-            correlation range it sits in — which is exactly the limitation to test next.
+            correlation range it sits in, which is exactly the limitation to test next.
           </p>
         </div>
 
@@ -226,6 +226,42 @@
             <li>Validation of the Elenbaas estimate against a conjugate CFD solve of a single fin.</li>
             <li>Publishing the MATLAB engine and the design write-up.</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="figures-title">
+        <h2 id="figures-title">Figures</h2>
+        <p class="case__note">Two solves of a pin-fin array, and the gap between them is the whole argument for coupling.</p>
+
+        <div class="plates">
+          <figure class="plate">
+            <div class="plate__head">
+              <span class="plate__tag">Conjugate solve · Fluent</span>
+              <span class="plate__value">300 to 739 K</span>
+            </div>
+            <img src="../assets/heat/conjugate-field.webp" width="1068" height="676" loading="lazy" decoding="async"
+                 alt="Static temperature contours on a conical pin-fin array. The base plate glows orange and yellow, each cone runs from a hot root to a cooler tip, and the surrounding air stays dark blue." />
+            <figcaption>
+              Static temperature with the air in the model. The base carries the heat load, the pins shed it, and
+              each cone falls from hot at the root to cool at the tip. Those cone surfaces are where the
+              convection coefficient has to come from.
+            </figcaption>
+          </figure>
+
+          <figure class="plate">
+            <div class="plate__head">
+              <span class="plate__tag plate__tag--alt">Conduction only · thermal FEA</span>
+              <span class="plate__value">22.380 to 22.385 °C</span>
+            </div>
+            <img src="../assets/heat/conduction-only.webp" width="1200" height="589" loading="lazy" decoding="async"
+                 alt="Finite-element thermal result on a pin-fin array with the mesh visible. The whole solid sits in a narrow band from green to red, and the legend reports a range of 22.380 to 22.385 degrees Celsius." />
+            <figcaption>
+              The same question asked of conduction alone, on a transient run at 100 s. The reported range never
+              leaves 22.380 to 22.385 °C: five thousandths of a degree across the entire sink. Heat is conducted,
+              spread and then has nowhere to go, which is exactly the error a structural FEA makes when it is
+              trusted on its own.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -258,7 +294,7 @@
 
 <footer class="footer">
   <div class="shell footer__inner">
-    <p class="footer__brand">Alexandre Fortin-Fabbro — McGill University × CentraleSupélec</p>
+    <p class="footer__brand">Alexandre Fortin-Fabbro · McGill University × CentraleSupélec</p>
     <p class="footer__meta">© <span data-year>2026</span> · Built as static HTML, CSS and vanilla JS · Hosted on GitHub Pages</p>
     <a class="footer__top" href="#top">Back to top
       <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>

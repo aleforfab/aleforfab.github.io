@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vortex generators vs. deep stall — CFD case study · Alexandre Fortin-Fabbro</title>
+<title>Vortex generators vs. deep stall | CFD case study · Alexandre Fortin-Fabbro</title>
 <meta name="description" content="Comparative CFD study of a wing profile with and without boundary-layer vortex generators, solved in Ansys Fluent at 9°, 15° and 21° of incidence. Measured force reports, pathlines and turbulent kinetic energy fields." />
 <meta name="author" content="Alexandre Fortin-Fabbro" />
 <meta name="theme-color" content="#08090c" />
 <link rel="canonical" href="https://aleforfab.github.io/projects/cfd-vortex-generators.html" />
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Vortex generators vs. deep stall — CFD case study" />
+<meta property="og:title" content="Vortex generators vs. deep stall | CFD case study" />
 <meta property="og:description" content="Six steady RANS configurations in Ansys Fluent: lift, drag and finesse across 9°, 15° and 21° of incidence." />
 <meta property="og:url" content="https://aleforfab.github.io/projects/cfd-vortex-generators.html" />
 <meta property="og:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Vortex generators vs. deep stall — CFD case study" />
+<meta name="twitter:title" content="Vortex generators vs. deep stall | CFD case study" />
 <meta name="twitter:description" content="Six steady RANS configurations in Ansys Fluent across 9°, 15° and 21° of incidence." />
 <meta name="twitter:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 
@@ -85,14 +85,14 @@
         <p class="section__index">Case study 01 · Numerical fluid dynamics</p>
         <h1 class="case__title">Vortex generators vs. deep stall</h1>
         <p class="case__lede">
-          The same wing profile, twice — clean, then fitted with boundary-layer vortex generators — solved
+          The same wing profile, twice: once clean and once fitted with boundary-layer vortex generators, solved
           at 9°, 15° and 21° of incidence. The question was narrow: do these passive devices buy anything
           before the wing stalls, and how much do they buy as it starts to?
         </p>
 
         <dl class="case__meta">
           <div><dt>Year</dt><dd>2026</dd></div>
-          <div><dt>Role</dt><dd>Geometry, meshing, solver, post-processing — solo</dd></div>
+          <div><dt>Role</dt><dd>Geometry, meshing, solver, post-processing, solo</dd></div>
           <div><dt>Toolchain</dt><dd>Ansys Discovery · Meshing · Fluent 2026 R1</dd></div>
           <div><dt>Output</dt><dd>10-page technical report (FR)</dd></div>
         </dl>
@@ -133,7 +133,7 @@
         </div>
 
         <figcaption class="instrument__caption" id="instrument-caption">
-          Joukowski-transformed profile, inviscid streamlines with the Kutta condition applied — a
+          Joukowski-transformed profile, inviscid streamlines with the Kutta condition applied: a
           mathematical illustration of incidence, <span class="instrument__caption-strong">not the meshed
           geometry and not the Fluent solution.</span> The L/D values beside it are measured results from
           the study below.
@@ -180,7 +180,7 @@
             <div class="tabs" role="tablist" aria-label="Quantity">
               <button class="tab" type="button" role="tab" id="tab-pathlines" aria-controls="panel-fields" aria-selected="true" data-quantity="pathlines">Pathlines</button>
               <button class="tab" type="button" role="tab" id="tab-velocity" aria-controls="panel-fields" aria-selected="false" tabindex="-1" data-quantity="velocity">Velocity</button>
-              <button class="tab" type="button" role="tab" id="tab-tke" aria-controls="panel-fields" aria-selected="false" tabindex="-1" data-quantity="tke" aria-label="TKE — turbulent kinetic energy">TKE</button>
+              <button class="tab" type="button" role="tab" id="tab-tke" aria-controls="panel-fields" aria-selected="false" tabindex="-1" data-quantity="tke" aria-label="TKE (turbulent kinetic energy)">TKE</button>
             </div>
 
             <div class="segmented segmented--sm" role="radiogroup" aria-label="Angle of incidence for field comparison">
@@ -192,7 +192,7 @@
 
           <div class="explorer__panels" id="panel-fields" role="tabpanel" aria-labelledby="tab-pathlines" tabindex="0">
             <figure class="field">
-              <div class="field__tag">Wing 1 — baseline</div>
+              <div class="field__tag">Wing 1, baseline</div>
               <button class="field__frame" type="button" aria-label="Enlarge baseline field image">
                 <img id="field-img-a" src="../assets/cfd/pathlines-09-baseline.webp" width="1000" height="539" decoding="async"
                      alt="Pathlines at 9 degrees around the baseline wing, showing a small leading-edge recirculation." />
@@ -202,7 +202,7 @@
             </figure>
 
             <figure class="field">
-              <div class="field__tag field__tag--alt">Wing 2 — with VG</div>
+              <div class="field__tag field__tag--alt">Wing 2, with VG</div>
               <button class="field__frame" type="button" aria-label="Enlarge vortex-generator field image">
                 <img id="field-img-b" src="../assets/cfd/pathlines-09-vg.webp" width="907" height="488" decoding="async"
                      alt="Pathlines at 9 degrees around the vortex-generator wing, remaining attached over the whole chord." />
@@ -225,8 +225,8 @@
             <figcaption class="chart__caption">
               <span class="chart__title">Aerodynamic finesse vs. incidence</span>
               <span class="chart__legend">
-                <span class="legend-item"><i class="legend-line legend-line--solid" aria-hidden="true"></i>Wing 1 — baseline</span>
-                <span class="legend-item"><i class="legend-line legend-line--dashed" aria-hidden="true"></i>Wing 2 — with VG</span>
+                <span class="legend-item"><i class="legend-line legend-line--solid" aria-hidden="true"></i>Wing 1, baseline</span>
+                <span class="legend-item"><i class="legend-line legend-line--dashed" aria-hidden="true"></i>Wing 2, with VG</span>
               </span>
             </figcaption>
             <svg class="chart__svg" viewBox="0 0 560 258" role="img" aria-labelledby="chart-desc">
@@ -282,12 +282,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><th scope="row">Wing 1 — 9°</th><td class="num">0.763</td><td class="num">0.674</td><td class="num">1.13</td></tr>
-                <tr><th scope="row">Wing 1 — 15°</th><td class="num">1.402</td><td class="num">0.856</td><td class="num">1.64</td></tr>
-                <tr><th scope="row">Wing 1 — 21°</th><td class="num">1.782</td><td class="num">1.113</td><td class="num">1.60</td></tr>
-                <tr class="data__alt"><th scope="row">Wing 2 — 9°</th><td class="num">0.803</td><td class="num">0.681</td><td class="num">1.18</td></tr>
-                <tr class="data__alt"><th scope="row">Wing 2 — 15°</th><td class="num">1.385</td><td class="num">0.857</td><td class="num">1.62</td></tr>
-                <tr class="data__alt"><th scope="row">Wing 2 — 21°</th><td class="num">1.992</td><td class="num">1.153</td><td class="num">1.73 <span class="delta">+8.1%</span></td></tr>
+                <tr><th scope="row">Wing 1, 9°</th><td class="num">0.763</td><td class="num">0.674</td><td class="num">1.13</td></tr>
+                <tr><th scope="row">Wing 1, 15°</th><td class="num">1.402</td><td class="num">0.856</td><td class="num">1.64</td></tr>
+                <tr><th scope="row">Wing 1, 21°</th><td class="num">1.782</td><td class="num">1.113</td><td class="num">1.60</td></tr>
+                <tr class="data__alt"><th scope="row">Wing 2, 9°</th><td class="num">0.803</td><td class="num">0.681</td><td class="num">1.18</td></tr>
+                <tr class="data__alt"><th scope="row">Wing 2, 15°</th><td class="num">1.385</td><td class="num">0.857</td><td class="num">1.62</td></tr>
+                <tr class="data__alt"><th scope="row">Wing 2, 21°</th><td class="num">1.992</td><td class="num">1.153</td><td class="num">1.73 <span class="delta">+8.1%</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -323,7 +323,7 @@
           <article class="find">
             <p class="find__deg">09°</p>
             <h3>Divergence before the numbers notice</h3>
-            <p>The baseline already carries a small leading-edge recirculation. The VG wing stays attached over the entire chord — a qualitative lead that costs almost nothing in measured forces yet.</p>
+            <p>The baseline already carries a small leading-edge recirculation. The VG wing stays attached over the entire chord, a qualitative lead that costs almost nothing in measured forces yet.</p>
           </article>
           <article class="find">
             <p class="find__deg">15°</p>
@@ -333,7 +333,7 @@
           <article class="find find--key">
             <p class="find__deg">21°</p>
             <h3>Where the device earns its keep</h3>
-            <p>The baseline develops a large main vortex plus a secondary one — deep separation. The VG wing keeps a single contained vortex and gains <strong>8.1% finesse</strong> as the baseline begins to drop.</p>
+            <p>The baseline develops a large main vortex plus a secondary one: deep separation. The VG wing keeps a single contained vortex and gains <strong>8.1% finesse</strong> as the baseline begins to drop.</p>
           </article>
         </div>
         <p class="findings__next">
@@ -374,7 +374,7 @@
 
 <footer class="footer">
   <div class="shell footer__inner">
-    <p class="footer__brand">Alexandre Fortin-Fabbro — McGill University × CentraleSupélec</p>
+    <p class="footer__brand">Alexandre Fortin-Fabbro · McGill University × CentraleSupélec</p>
     <p class="footer__meta">© <span data-year>2026</span> · Built as static HTML, CSS and vanilla JS · Hosted on GitHub Pages</p>
     <a class="footer__top" href="#top">Back to top
       <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>

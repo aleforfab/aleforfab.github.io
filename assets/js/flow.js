@@ -1,9 +1,9 @@
 /* ==========================================================================
-   flow.js — potential-flow (Joukowski) streamline illustration
+   flow.js: potential-flow (Joukowski) streamline illustration
    --------------------------------------------------------------------------
    A textbook inviscid construction used purely as a visual: a Joukowski-
    transformed profile with the Kutta condition applied and rotated to the
-   selected incidence. It is NOT a reproduction of the Ansys Fluent study —
+   selected incidence. It is NOT a reproduction of the Ansys Fluent study:
    every number shown in the UI comes from that study.
 
    Body frame (ζ-plane, cylinder of radius R centred at μ, chord c):

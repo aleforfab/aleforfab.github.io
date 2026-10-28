@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Markov-chain market model — case study · Alexandre Fortin-Fabbro</title>
+<title>Markov-chain market model | case study · Alexandre Fortin-Fabbro</title>
 <meta name="description" content="Discrete-time Markov chain model of market regimes: one- and multi-step transition matrices, eigen-analysis at λ = 1 and the stationary distribution, implemented in Python and MATLAB." />
 <meta name="author" content="Alexandre Fortin-Fabbro" />
 <meta name="theme-color" content="#08090c" />
 <link rel="canonical" href="https://aleforfab.github.io/projects/markov-market-model.html" />
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Markov-chain market model — case study" />
+<meta property="og:title" content="Markov-chain market model | case study" />
 <meta property="og:description" content="Transition matrices, eigen-analysis and long-run market behaviour in Python and MATLAB." />
 <meta property="og:url" content="https://aleforfab.github.io/projects/markov-market-model.html" />
 <meta property="og:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Markov-chain market model — case study" />
+<meta name="twitter:title" content="Markov-chain market model | case study" />
 <meta name="twitter:description" content="Transition matrices, eigen-analysis and long-run market behaviour." />
 <meta name="twitter:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 
@@ -81,7 +81,7 @@
         <p class="section__index">Case study 02 · Applied mathematics</p>
         <h1 class="case__title">Markov-chain market model</h1>
         <p class="case__lede">
-          Markets are usually described as a sequence of regimes — bullish, bearish, stagnant — rather than
+          Markets are usually described as a sequence of regimes (bullish, bearish, stagnant) rather than
           a smooth curve. This project treats that description as a state machine and asks what the
           mathematics says about where it settles.
         </p>
@@ -105,7 +105,7 @@
           </p>
           <p>
             The project builds that chain, propagates it forward one step and many steps at a time, and then
-            checks whether — and how fast — the distribution settles into a stable shape.
+            checks whether the distribution settles into a stable shape, and how fast.
           </p>
         </div>
       </section>
@@ -116,7 +116,7 @@
           <li>
             <span class="method__step">01</span>
             <h3>Define the state space</h3>
-            <p>Three regimes — bullish, bearish, stagnant — encoded so that a daily or weekly observation maps onto exactly one state.</p>
+            <p>Three regimes (bullish, bearish, stagnant) encoded so that a daily or weekly observation maps onto exactly one state.</p>
           </li>
           <li>
             <span class="method__step">02</span>
@@ -126,7 +126,7 @@
           <li>
             <span class="method__step">03</span>
             <h3>Find the stationary distribution</h3>
-            <p>The left eigenvector at λ = 1 gives the long-run share of time spent in each regime — the fixed point of the chain.</p>
+            <p>The left eigenvector at λ = 1 gives the long-run share of time spent in each regime, the fixed point of the chain.</p>
           </li>
           <li>
             <span class="method__step">04</span>
@@ -169,67 +169,54 @@
           </div>
         </div>
 
-        <figure class="diagram">
-          <svg viewBox="0 0 480 260" role="img" aria-label="Three-state Markov chain: bullish, stagnant and bearish, with directed transition probabilities between each pair and a self-loop on each state.">
+        <figure class="diagram diagram--chain">
+          <svg viewBox="0 0 520 344" role="img" aria-label="Three-state Markov chain drawn as a cycle: bull market leads to stagnant, stagnant leads to bear, and bear returns to bull. Each state also carries a small self-transition loop.">
             <defs>
-              <marker id="mk-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <marker id="mk-fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" fill="#8cb6ff"/>
               </marker>
-              <marker id="mk-d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <marker id="mk-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" fill="#5c6b80"/>
               </marker>
             </defs>
 
-            <!-- edges -->
-            <g fill="none" stroke="#5c6b80" stroke-width="1.2" marker-end="url(#mk-d)">
-              <path d="M300 78 Q360 60 396 118"/>
-              <path d="M396 148 Q352 208 302 208"/>
-              <path d="M196 208 Q144 208 100 150"/>
-              <path d="M100 118 Q140 62 296 74"/>
-            </g>
-            <g fill="none" stroke="#8cb6ff" stroke-width="1.5" marker-end="url(#mk-a)">
-              <path d="M120 96 Q200 30 288 56"/>
-              <path d="M310 224 Q400 214 410 168"/>
-              <path d="M86 142 Q66 186 130 206"/>
+            <!-- self-transitions: small loops outside each node -->
+            <g fill="none" stroke="#5c6b80" stroke-width="1.1" marker-end="url(#mk-loop)">
+              <path d="M233 40 C 226 18 294 18 287 40"/>
+              <path d="M24 246 C 4 239 4 259 24 263"/>
+              <path d="M496 246 C 516 239 516 259 496 263"/>
             </g>
 
-            <!-- self loops -->
-            <g fill="none" stroke="#3d4b5f" stroke-width="1.2" marker-end="url(#mk-d)">
-              <path d="M188 48 q-26 -30 10 -34 q22 -2 20 22"/>
-              <path d="M436 118 q26 14 0 30"/>
-              <path d="M44 118 q-24 14 0 30"/>
+            <!-- the cycle: one arc per transition, drawn under the nodes -->
+            <g fill="none" stroke="#8cb6ff" stroke-width="1.6" stroke-linecap="round" marker-end="url(#mk-fwd)">
+              <path d="M324 54 C 404 48 448 140 438 221"/>
+              <path d="M432 272 C 432 306 344 317 260 317 C 176 317 88 306 88 277"/>
+              <path d="M88 226 C 84 152 140 72 192 54"/>
             </g>
 
-            <!-- nodes -->
+            <!-- nodes sit on top so every arrowhead stays visible -->
             <g>
-              <rect x="132" y="40" width="132" height="46" rx="10" fill="#111823" stroke="#3b82f6" stroke-opacity=".6"/>
-              <rect x="320" y="118" width="128" height="46" rx="10" fill="#111823" stroke="#2a3444"/>
-              <rect x="32" y="118" width="128" height="46" rx="10" fill="#111823" stroke="#2a3444"/>
-            </g>
-            <g font-family="ui-monospace, monospace" font-size="11.5" fill="#e8eef7" text-anchor="middle" letter-spacing=".07em">
-              <text x="198" y="68">BULLISH</text>
-              <text x="384" y="146">STAGNANT</text>
-              <text x="96" y="146">BEARISH</text>
+              <rect x="196" y="40" width="128" height="46" rx="10" fill="#111823" stroke="#3b82f6" stroke-opacity=".7"/>
+              <rect x="368" y="226" width="128" height="46" rx="10" fill="#111823" stroke="#2a3444"/>
+              <rect x="24" y="226" width="128" height="46" rx="10" fill="#111823" stroke="#2a3444"/>
             </g>
 
-            <!-- edge labels -->
-            <g font-family="ui-monospace, monospace" font-size="10" fill="#8cb6ff">
-              <text x="206" y="38" text-anchor="middle">p₁₂</text>
-              <text x="392" y="200" text-anchor="middle">p₂₃</text>
-              <text x="104" y="188" text-anchor="middle">p₃₁</text>
-            </g>
-            <g font-family="ui-monospace, monospace" font-size="10" fill="#6b7889">
-              <text x="330" y="86" text-anchor="middle">p₁₃</text>
-              <text x="150" y="86" text-anchor="middle">p₃₂</text>
+            <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="12.5" fill="#e8eef7" text-anchor="middle" letter-spacing=".09em">
+              <text x="260" y="69">BULLISH</text>
+              <text x="432" y="255">STAGNANT</text>
+              <text x="88" y="255">BEARISH</text>
             </g>
 
-            <text x="240" y="248" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#6b7889">
-              p₂₁, p₁₁, p₂₂, p₃₃ — self-transitions and return paths
-            </text>
+            <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" fill="#8cb6ff" text-anchor="middle">
+              <text x="389" y="102">p₁₂</text>
+              <text x="260" y="337">p₂₃</text>
+              <text x="148" y="120">p₃₁</text>
+            </g>
           </svg>
           <figcaption>
-            Schematic of the three-regime chain. Edge labels name transition probabilities; the loop arrows are
-            self-transitions. Drawing is illustrative of the structure, not a plot of the fitted values.
+            The three-regime chain as a directed graph. Arrows carry the one-step probabilities; the small loops
+            are the self-transitions p₁₁, p₂₂ and p₃₃. Every arrow runs both ways, so the reverse probabilities
+            p₂₁, p₃₂ and p₁₃ complete the matrix above. The drawing shows structure, not fitted values.
           </figcaption>
         </figure>
       </section>
@@ -238,10 +225,10 @@
         <h2 id="gives-title">What the analysis yields</h2>
         <div class="case__body">
           <ul class="bullets">
-            <li><strong>A stationary distribution</strong> — the share of time the chain spends in each regime over the long run, independent of the starting state.</li>
-            <li><strong>Multi-step forecasts</strong> — <span class="mono">Pⁿ</span> gives the probability of ending in each regime after <span class="mono">n</span> periods.</li>
-            <li><strong>Convergence behaviour</strong> — how quickly <span class="mono">π₀ Pⁿ</span> approaches <span class="mono">π</span>, verified numerically rather than assumed.</li>
-            <li><strong>A stated set of assumptions</strong> — irreducibility and aperiodicity are conditions, not decoration; the model is only as good as they are.</li>
+            <li><strong>A stationary distribution</strong>: the share of time the chain spends in each regime over the long run, independent of the starting state.</li>
+            <li><strong>Multi-step forecasts</strong>: <span class="mono">Pⁿ</span> gives the probability of ending in each regime after <span class="mono">n</span> periods.</li>
+            <li><strong>Convergence behaviour</strong>: how quickly <span class="mono">π₀ Pⁿ</span> approaches <span class="mono">π</span>, verified numerically rather than assumed.</li>
+            <li><strong>A stated set of assumptions</strong>: irreducibility and aperiodicity are conditions, not decoration; the model is only as good as they are.</li>
           </ul>
           <p>
             The honest limit of any regime model is worth stating plainly: a Markov chain reproduces the
@@ -280,7 +267,7 @@
 
 <footer class="footer">
   <div class="shell footer__inner">
-    <p class="footer__brand">Alexandre Fortin-Fabbro — McGill University × CentraleSupélec</p>
+    <p class="footer__brand">Alexandre Fortin-Fabbro · McGill University × CentraleSupélec</p>
     <p class="footer__meta">© <span data-year>2026</span> · Built as static HTML, CSS and vanilla JS · Hosted on GitHub Pages</p>
     <a class="footer__top" href="#top">Back to top
       <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
