@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conical pin-fin heat sink | case study · Alexandre Fortin-Fabbro</title>
+<meta name="description" content="Thermal design case study: a MATLAB conjugate heat-transfer model of a conical pin-fin heat sink, with Elenbaas correlations standing in for natural convection where structural FEA falls short." />
+<meta name="author" content="Alexandre Fortin-Fabbro" />
+<meta name="theme-color" content="#08090c" />
+<link rel="canonical" href="https://aleforfab.github.io/projects/pin-fin-heat-sink.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Conical pin-fin heat sink | case study" />
+<meta property="og:description" content="A MATLAB conjugate heat-transfer model coupling thermal FEA with natural-convection correlations." />
+<meta property="og:url" content="https://aleforfab.github.io/projects/pin-fin-heat-sink.html" />
+<meta property="og:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Conical pin-fin heat sink | case study" />
+<meta name="twitter:description" content="Thermal FEA and natural-convection correlations in MATLAB." />
+<meta name="twitter:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
+
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../assets/img/favicon.svg" />
+
+<link rel="preload" href="../assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body class="page-case" data-base="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.8 7.3 5.4a2 2 0 0 0 2.4 0l7.3-5.4"/></symbol>
+</svg>
+
+<div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+<header class="masthead masthead--sub" id="masthead">
+  <div class="shell masthead__inner">
+    <a class="brand" href="../index.html" aria-label="Alexandre Fortin-Fabbro, back to the portfolio home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 21c4.5-6.4 11-9.4 18-9.4 5.6 0 10.2 1.6 14 4.4-4.4 5.6-10.6 8.6-18.2 8.6-5.3 0-9.9-1.2-13.8-3.6Z" fill="currentColor" opacity=".18"/><path d="M3.5 21.2c5-6.9 11.6-10 19-10 5.2 0 9.7 1.3 13.5 3.9M3.5 21.2c4 2.3 8.6 3.4 13.8 3.4 7.7 0 14-2.7 18.7-8.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>A. Fortin-Fabbro</strong>
+      </span>
+    </a>
+
+    <div class="masthead__actions">
+      <a class="btn btn--ghost btn--sm" href="../index.html#projects">
+        <svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        <span>All projects</span>
+      </a>
+      <a class="btn btn--ghost btn--sm masthead__cv" href="../assets/docs/Alexandre_Fortin_Fabbro_CV.pdf" download>
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+        <span>Résumé</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="case">
+    <div class="shell">
+
+      <header class="case__head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Portfolio</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Conical pin-fin heat sink</span>
+        </nav>
+
+        <p class="section__index">Case study 03 · Thermal design <span class="tag-wip">in progress</span></p>
+        <h1 class="case__title">Conical pin-fin heat sink</h1>
+        <p class="case__lede">
+          Natural convection is the hard part of a heat-sink simulation: structural FEA will happily solve
+          conduction and then quietly under-predict how much heat the air actually carries away. This project
+          couples the two sides deliberately.
+        </p>
+
+        <dl class="case__meta">
+          <div><dt>Status</dt><dd>Model built · write-up pending</dd></div>
+          <div><dt>Type</dt><dd>Thermal optimisation &amp; conjugate heat transfer</dd></div>
+          <div><dt>Tools</dt><dd>MATLAB PDE Toolbox · SolidWorks</dd></div>
+          <div><dt>Geometry</dt><dd>Conical pin-fin array on a base plate</dd></div>
+        </dl>
+      </header>
+
+      <section class="case__section" aria-labelledby="q-title">
+        <h2 id="q-title">The question</h2>
+        <div class="case__body">
+          <p>
+            Pin fins are the standard way to add surface area to a heat sink, but the fin itself is only half
+            the problem. Heat leaves the metal through the boundary layer of air around it, and in natural
+            convection that boundary layer is thin, buoyant and very sensitive to spacing. Optimising the
+            metal without modelling the air optimises the wrong thing.
+          </p>
+          <p>
+            The aim was a heat sink that removes the same heat with less material, and to build the analysis
+            engine behind that claim rather than trust a black box.
+          </p>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="approach-title">
+        <h2 id="approach-title">Approach</h2>
+        <ol class="method__steps method__steps--four">
+          <li>
+            <span class="method__step">01</span>
+            <h3>Static thermal FEA engine</h3>
+            <p>A MATLAB model built on the PDE Toolbox solves conduction through the base and the conical fins, driven by a heat-flux boundary condition at the die.</p>
+          </li>
+          <li>
+            <span class="method__step">02</span>
+            <h3>Correcting the fluid side</h3>
+            <p>Raw structural FEA has no idea air is moving. Empirical Elenbaas boundary-layer correlations provide the convective coefficient on the fin surfaces, so natural convection enters the solve as a calibrated boundary condition.</p>
+          </li>
+          <li>
+            <span class="method__step">03</span>
+            <h3>Geometry iteration</h3>
+            <p>Conical pin profiles modelled in SolidWorks, with taper, spacing and base thickness varied to trade surface area against mass.</p>
+          </li>
+          <li>
+            <span class="method__step">04</span>
+            <h3>Compare and trade</h3>
+            <p>Each configuration is compared on junction temperature and total mass, the two numbers that decide whether a design is worth manufacturing.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="case__section" aria-labelledby="diagram-title">
+        <h2 id="diagram-title">Configuration</h2>
+        <figure class="diagram">
+          <svg viewBox="0 0 480 260" role="img" aria-label="Schematic cross-section of the heat sink: a base plate with conical pin fins, heat flux entering from below and leaving through the fins by natural convection.">
+            <defs>
+              <linearGradient id="pf-base2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1c2634"/><stop offset="1" stop-color="#101722"/>
+              </linearGradient>
+              <marker id="pf-heat2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#f5b348"/>
+              </marker>
+              <marker id="pf-in2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#8cb6ff"/>
+              </marker>
+            </defs>
+
+            <!-- outflow arrows -->
+            <g stroke="#f59e0b" stroke-opacity=".5" stroke-width="1.2" fill="none" marker-end="url(#pf-heat2)">
+              <path d="M120 84V52M176 76V44M240 72V40M304 76V44M360 84V52"/>
+              <path d="M148 56V32M212 50V26M268 50V26M332 56V32" stroke-opacity=".26"/>
+            </g>
+
+            <!-- fins -->
+            <g fill="#16202d" stroke="#4b5f79" stroke-width="1.1">
+              <path d="M104 200 L126 100 h14 l14 100 Z"/>
+              <path d="M158 200 L176 88 h16 l10 112 Z"/>
+              <path d="M216 200 L234 82 h16 l10 118 Z"/>
+              <path d="M274 200 L292 88 h16 l12 112 Z"/>
+              <path d="M334 200 L354 100 h14 l12 100 Z"/>
+            </g>
+
+            <!-- base -->
+            <rect x="72" y="198" width="336" height="22" rx="3" fill="url(#pf-base2)" stroke="#4b5f79" stroke-width="1.1"/>
+
+            <!-- incoming flux -->
+            <g stroke="#8cb6ff" stroke-width="1.3" fill="none" marker-end="url(#pf-in2)" stroke-opacity=".85">
+              <path d="M240 250V226"/>
+            </g>
+            <text x="252" y="248" font-family="ui-monospace, monospace" font-size="9.5" fill="#8cb6ff">Q</text>
+
+            <g font-family="ui-monospace, monospace" font-size="9.5" fill="#6b7889">
+              <text x="72" y="240">BASE PLATE</text>
+              <text x="408" y="132" text-anchor="end">CONICAL PINS</text>
+            </g>
+            <g font-family="ui-monospace, monospace" font-size="9.5" fill="#f5b348" letter-spacing=".08em">
+              <text x="72" y="24">NATURAL CONVECTION</text>
+            </g>
+          </svg>
+          <figcaption>
+            Schematic cross-section only, not the SolidWorks geometry. Heat enters through the base and leaves
+            through the fins; the convective coefficient on those fin surfaces comes from Elenbaas correlations.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section" aria-labelledby="figures-title">
+        <h2 id="figures-title">Figure</h2>
+
+        <figure class="plate plate--single">
+          <div class="plate__head">
+            <span class="plate__tag plate__tag--alt">Conduction only · thermal FEA</span>
+            <span class="plate__value">22.380 to 22.385 °C over 100 s</span>
+          </div>
+          <img src="../assets/heat/conduction-only.webp" width="1200" height="589" loading="lazy" decoding="async"
+               alt="Finite-element thermal result on a conical pin-fin array with the mesh visible. The base runs from red to yellow while the pins sit in green and blue, and the legend reports a range of 22.380 to 22.385 degrees Celsius." />
+          <figcaption>
+            Transient thermal FEA of the array with a heat-flux boundary under the base. Read the legend before
+            the colours: the whole solve spans 22.380 to 22.385 °C.
+          </figcaption>
+        </figure>
+
+        <div class="case__body case__body--top">
+          <p>
+            The reason the result is so flat is that nothing was taking the heat away. A thermal FEA solves
+            conduction inside the solid and stops at the surface; the baseline run fixed that surface at a single
+            temperature, which quietly assumes the air is removing whatever arrives. In reality the air over a fin
+            is the whole bottleneck: it is buoyancy-driven, it thickens along each surface, and its temperature
+            rises as it climbs, so the local convection coefficient changes from the base of a pin to its tip. With
+            that missing, the pins carry heat perfectly well up to a boundary that cannot shed it, and every
+            configuration ends up looking alike.
+          </p>
+          <p>
+            That is the finding the project turned on. The FEA alone does not answer the question, so the model was
+            rebuilt to put the air back in: Elenbaas correlations supply a convection coefficient on each fin
+            surface, the solid solve is iterated against them, and the surface temperature is no longer imposed but
+            solved. The figures reported above come from that coupled model; the plot on this page is the
+            conduction-only run it was built to correct.
+          </p>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="result-title">
+        <h2 id="result-title">Reported result</h2>
+        <div class="metrics">
+          <div class="metric">
+            <p class="metric__value">38.5%</p>
+            <p class="metric__label">Mass reduction</p>
+            <p class="metric__note">relative to the reference heat sink</p>
+          </div>
+          <div class="metric">
+            <p class="metric__value">37.5 °C</p>
+            <p class="metric__label">Lower junction temperature</p>
+            <p class="metric__note">at the same heat load</p>
+          </div>
+          <div class="metric">
+            <p class="metric__value">1-D</p>
+            <p class="metric__label">Coupling strategy</p>
+            <p class="metric__note">FEA conduction + correlation-based convection</p>
+          </div>
+        </div>
+
+        <div class="case__body case__body--top">
+          <p>
+            These are model outputs, not bench measurements. The coupling is the part to scrutinise: using
+            correlations instead of solving the flow field means the design is only as good as the
+            correlation range it sits in, which is exactly the limitation to test next.
+          </p>
+        </div>
+
+        <div class="callout">
+          <p class="callout__title">Still open</p>
+          <ul class="bullets bullets--tight">
+            <li>Mesh-independence check on the fin tips, where the temperature gradient is steepest.</li>
+            <li>Validation of the Elenbaas estimate against a conjugate CFD solve of a single fin.</li>
+            <li>Publishing the MATLAB engine and the design write-up.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="tools-title">
+        <h2 id="tools-title">Tools</h2>
+        <ul class="chips chips--lg">
+          <li class="chip chip--accent">MATLAB PDE Toolbox</li>
+          <li class="chip chip--accent">SolidWorks</li>
+          <li class="chip">Finite element analysis</li>
+          <li class="chip">Conjugate heat transfer</li>
+          <li class="chip">Elenbaas correlations</li>
+          <li class="chip">Parametric geometry</li>
+        </ul>
+      </section>
+
+      <nav class="casenav" aria-label="More projects">
+        <a class="casenav__link casenav__link--prev" href="markov-market-model.html">
+          <small><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-right"/></svg> Previous case study</small>
+          <span>Markov-chain market model</span>
+        </a>
+        <a class="casenav__link casenav__link--next" href="../index.html#projects">
+          <small>All projects <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></small>
+          <span>Back to the project index</span>
+        </a>
+      </nav>
+
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="shell footer__inner">
+    <p class="footer__brand">Alexandre Fortin-Fabbro · McGill University × CentraleSupélec</p>
+    <p class="footer__meta">© <span data-year>2026</span> · Built as static HTML, CSS and vanilla JS · Hosted on GitHub Pages</p>
+    <a class="footer__top" href="#top">Back to top
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

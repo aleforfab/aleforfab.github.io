@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Markov-chain market model | case study · Alexandre Fortin-Fabbro</title>
+<meta name="description" content="Discrete-time Markov chain model of market regimes: one- and multi-step transition matrices, eigen-analysis at λ = 1 and the stationary distribution, implemented in Python and MATLAB." />
+<meta name="author" content="Alexandre Fortin-Fabbro" />
+<meta name="theme-color" content="#08090c" />
+<link rel="canonical" href="https://aleforfab.github.io/projects/markov-market-model.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Markov-chain market model | case study" />
+<meta property="og:description" content="Transition matrices, eigen-analysis and long-run market behaviour in Python and MATLAB." />
+<meta property="og:url" content="https://aleforfab.github.io/projects/markov-market-model.html" />
+<meta property="og:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Markov-chain market model | case study" />
+<meta name="twitter:description" content="Transition matrices, eigen-analysis and long-run market behaviour." />
+<meta name="twitter:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
+
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../assets/img/favicon.svg" />
+
+<link rel="preload" href="../assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body class="page-case" data-base="../">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.8 7.3 5.4a2 2 0 0 0 2.4 0l7.3-5.4"/></symbol>
+</svg>
+
+<div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+<header class="masthead masthead--sub" id="masthead">
+  <div class="shell masthead__inner">
+    <a class="brand" href="../index.html" aria-label="Alexandre Fortin-Fabbro, back to the portfolio home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 21c4.5-6.4 11-9.4 18-9.4 5.6 0 10.2 1.6 14 4.4-4.4 5.6-10.6 8.6-18.2 8.6-5.3 0-9.9-1.2-13.8-3.6Z" fill="currentColor" opacity=".18"/><path d="M3.5 21.2c5-6.9 11.6-10 19-10 5.2 0 9.7 1.3 13.5 3.9M3.5 21.2c4 2.3 8.6 3.4 13.8 3.4 7.7 0 14-2.7 18.7-8.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>A. Fortin-Fabbro</strong>
+      </span>
+    </a>
+
+    <div class="masthead__actions">
+      <a class="btn btn--ghost btn--sm" href="../index.html#projects">
+        <svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        <span>All projects</span>
+      </a>
+      <a class="btn btn--ghost btn--sm masthead__cv" href="../assets/docs/Alexandre_Fortin_Fabbro_CV.pdf" download>
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+        <span>Résumé</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="case">
+    <div class="shell">
+
+      <header class="case__head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Portfolio</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Markov-chain market model</span>
+        </nav>
+
+        <p class="section__index">Case study 02 · Applied mathematics</p>
+        <h1 class="case__title">Markov-chain market model</h1>
+        <p class="case__lede">
+          Markets are usually described as a sequence of regimes (bullish, bearish, stagnant) rather than
+          a smooth curve. This project treats that description as a state machine and asks what the
+          mathematics says about where it settles.
+        </p>
+
+        <dl class="case__meta">
+          <div><dt>Year</dt><dd>2025</dd></div>
+          <div><dt>Format</dt><dd>Applied mathematics &amp; quantitative analysis project</dd></div>
+          <div><dt>Tools</dt><dd>Python · MATLAB</dd></div>
+          <div><dt>Focus</dt><dd>Linear algebra, spectral analysis, convergence</dd></div>
+        </dl>
+      </header>
+
+      <section class="case__section" aria-labelledby="q-title">
+        <h2 id="q-title">The question</h2>
+        <div class="case__body">
+          <p>
+            If the market can be in a small number of states, and if the probability of moving between them
+            depends only on the current state, then the whole system is a discrete-time Markov chain. That
+            buys a strong claim: the long-run behaviour is determined not by history but by the transition
+            matrix alone.
+          </p>
+          <p>
+            The project builds that chain, propagates it forward one step and many steps at a time, and then
+            checks whether the distribution settles into a stable shape, and how fast.
+          </p>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="approach-title">
+        <h2 id="approach-title">Approach</h2>
+        <ol class="method__steps method__steps--four">
+          <li>
+            <span class="method__step">01</span>
+            <h3>Define the state space</h3>
+            <p>Three regimes (bullish, bearish, stagnant) encoded so that a daily or weekly observation maps onto exactly one state.</p>
+          </li>
+          <li>
+            <span class="method__step">02</span>
+            <h3>Build the transition matrix</h3>
+            <p>One-step probabilities estimated from observed transitions, then raised to powers to get multi-step probabilities. Every row sums to one.</p>
+          </li>
+          <li>
+            <span class="method__step">03</span>
+            <h3>Find the stationary distribution</h3>
+            <p>The left eigenvector at λ = 1 gives the long-run share of time spent in each regime, the fixed point of the chain.</p>
+          </li>
+          <li>
+            <span class="method__step">04</span>
+            <h3>Test the assumptions</h3>
+            <p>Irreducibility (every state reachable from every other) and aperiodicity are what make that limit meaningful; convergence is then verified numerically.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="case__section" aria-labelledby="maths-title">
+        <h2 id="maths-title">The maths</h2>
+        <div class="case__body">
+          <p>
+            For a row-stochastic matrix <span class="mono">P</span>, the distribution after <span class="mono">n</span>
+            steps is <span class="mono">π₀ Pⁿ</span>. The stationary distribution <span class="mono">π</span> is the
+            left eigenvector associated with the dominant eigenvalue, and it satisfies <span class="mono">πP = π</span>,
+            with components summing to one.
+          </p>
+        </div>
+
+        <div class="equations">
+          <div class="equation">
+            <p class="equation__label">Transition matrix</p>
+            <p class="equation__body mono">
+              P = [ p<sub>BB</sub> p<sub>BS</sub> p<sub>BR</sub> ;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<sub>SB</sub> p<sub>SS</sub> p<sub>SR</sub> ;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<sub>RB</sub> p<sub>RS</sub> p<sub>RR</sub> ]
+            </p>
+            <p class="equation__note">Rows sum to 1. Subscripts read “from → to”.</p>
+          </div>
+          <div class="equation">
+            <p class="equation__label">Stationary condition</p>
+            <p class="equation__body mono">π P = π,&nbsp; Σπ<sub>i</sub> = 1</p>
+            <p class="equation__note">Solved as the eigenproblem at λ = 1, then normalised.</p>
+          </div>
+          <div class="equation">
+            <p class="equation__label">Long-run behaviour</p>
+            <p class="equation__body mono">lim<sub>n→∞</sub> π₀ P<sup>n</sup> = π</p>
+            <p class="equation__note">Holds for an irreducible, aperiodic chain.</p>
+          </div>
+        </div>
+
+        <figure class="diagram diagram--chain">
+          <svg viewBox="0 0 520 344" role="img" aria-label="Three-state Markov chain drawn as a cycle: bull market leads to stagnant, stagnant leads to bear, and bear returns to bull. Each state also carries a small self-transition loop.">
+            <defs>
+              <marker id="mk-fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#8cb6ff"/>
+              </marker>
+              <marker id="mk-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#5c6b80"/>
+              </marker>
+            </defs>
+
+            <!-- self-transitions: small loops outside each node -->
+            <g fill="none" stroke="#5c6b80" stroke-width="1.1" marker-end="url(#mk-loop)">
+              <path d="M233 40 C 226 18 294 18 287 40"/>
+              <path d="M24 246 C 4 239 4 259 24 263"/>
+              <path d="M496 246 C 516 239 516 259 496 263"/>
+            </g>
+
+            <!-- the cycle: one arc per transition, drawn under the nodes -->
+            <g fill="none" stroke="#8cb6ff" stroke-width="1.6" stroke-linecap="round" marker-end="url(#mk-fwd)">
+              <path d="M324 54 C 404 48 448 140 438 221"/>
+              <path d="M432 272 C 432 306 344 317 260 317 C 176 317 88 306 88 277"/>
+              <path d="M88 226 C 84 152 140 72 192 54"/>
+            </g>
+
+            <!-- nodes sit on top so every arrowhead stays visible -->
+            <g>
+              <rect x="196" y="40" width="128" height="46" rx="10" fill="#111823" stroke="#3b82f6" stroke-opacity=".7"/>
+              <rect x="368" y="226" width="128" height="46" rx="10" fill="#111823" stroke="#2a3444"/>
+              <rect x="24" y="226" width="128" height="46" rx="10" fill="#111823" stroke="#2a3444"/>
+            </g>
+
+            <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="12.5" fill="#e8eef7" text-anchor="middle" letter-spacing=".09em">
+              <text x="260" y="69">BULLISH</text>
+              <text x="432" y="255">STAGNANT</text>
+              <text x="88" y="255">BEARISH</text>
+            </g>
+
+            <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" fill="#8cb6ff" text-anchor="middle">
+              <text x="389" y="102">p₁₂</text>
+              <text x="260" y="337">p₂₃</text>
+              <text x="148" y="120">p₃₁</text>
+            </g>
+          </svg>
+          <figcaption>
+            The three-regime chain as a directed graph. Arrows carry the one-step probabilities; the small loops
+            are the self-transitions p₁₁, p₂₂ and p₃₃. Every arrow runs both ways, so the reverse probabilities
+            p₂₁, p₃₂ and p₁₃ complete the matrix above. The drawing shows structure, not fitted values.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section" aria-labelledby="gives-title">
+        <h2 id="gives-title">What the analysis yields</h2>
+        <div class="case__body">
+          <ul class="bullets">
+            <li><strong>A stationary distribution</strong>: the share of time the chain spends in each regime over the long run, independent of the starting state.</li>
+            <li><strong>Multi-step forecasts</strong>: <span class="mono">Pⁿ</span> gives the probability of ending in each regime after <span class="mono">n</span> periods.</li>
+            <li><strong>Convergence behaviour</strong>: how quickly <span class="mono">π₀ Pⁿ</span> approaches <span class="mono">π</span>, verified numerically rather than assumed.</li>
+            <li><strong>A stated set of assumptions</strong>: irreducibility and aperiodicity are conditions, not decoration; the model is only as good as they are.</li>
+          </ul>
+          <p>
+            The honest limit of any regime model is worth stating plainly: a Markov chain reproduces the
+            transition structure you estimated, so the memoryless assumption is doing a lot of work. The value
+            is in the framework and the convergence analysis, not in a market forecast.
+          </p>
+        </div>
+      </section>
+
+      <section class="case__section" aria-labelledby="tools-title">
+        <h2 id="tools-title">Tools</h2>
+        <ul class="chips chips--lg">
+          <li class="chip chip--accent">Python</li>
+          <li class="chip chip--accent">MATLAB</li>
+          <li class="chip">Linear algebra</li>
+          <li class="chip">Eigen-analysis</li>
+          <li class="chip">Numerical convergence</li>
+          <li class="chip">Quantitative analysis</li>
+        </ul>
+      </section>
+
+      <nav class="casenav" aria-label="More projects">
+        <a class="casenav__link casenav__link--prev" href="cfd-vortex-generators.html">
+          <small><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-right"/></svg> Previous case study</small>
+          <span>Vortex generators vs. deep stall</span>
+        </a>
+        <a class="casenav__link casenav__link--next" href="pin-fin-heat-sink.html">
+          <small>Next case study <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></small>
+          <span>Conical pin-fin heat sink</span>
+        </a>
+      </nav>
+
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="shell footer__inner">
+    <p class="footer__brand">Alexandre Fortin-Fabbro · McGill University × CentraleSupélec</p>
+    <p class="footer__meta">© <span data-year>2026</span> · Built as static HTML, CSS and vanilla JS · Hosted on GitHub Pages</p>
+    <a class="footer__top" href="#top">Back to top
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

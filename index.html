@@ -3,26 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Alexandre Fortin-Fabbro — Engineering Portfolio · CFD &amp; Multiphysics</title>
-<meta name="description" content="Engineering portfolio of Alexandre Fortin-Fabbro, Global Engineering student at McGill University and CentraleSupélec. Numerical simulation, CFD aerodynamics with Ansys Fluent, multiphysics modelling and design." />
+<title>Alexandre Fortin-Fabbro | Engineering Portfolio · CFD, Simulation &amp; Design</title>
+<meta name="description" content="Engineering portfolio of Alexandre Fortin-Fabbro, first-year Global Engineering student at McGill University and CentraleSupélec. Case studies in CFD aerodynamics, stochastic modelling and thermal design." />
 <meta name="author" content="Alexandre Fortin-Fabbro" />
 <meta name="theme-color" content="#08090c" />
 <link rel="canonical" href="https://aleforfab.github.io/" />
 
 <meta property="og:type" content="profile" />
-<meta property="og:title" content="Alexandre Fortin-Fabbro — Engineering Portfolio" />
-<meta property="og:description" content="CFD aerodynamics, multiphysics simulation and engineering design. McGill × CentraleSupélec." />
+<meta property="og:title" content="Alexandre Fortin-Fabbro | Engineering Portfolio" />
+<meta property="og:description" content="Case studies in CFD aerodynamics, stochastic modelling and thermal design. McGill × CentraleSupélec." />
 <meta property="og:url" content="https://aleforfab.github.io/" />
 <meta property="og:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image:alt" content="Dark engineering portfolio hero: name, specialisation and an interactive streamline panel." />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Dark engineering portfolio title card with the name Alexandre Fortin-Fabbro and three case-study areas." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Alexandre Fortin-Fabbro — Engineering Portfolio" />
-<meta name="twitter:description" content="CFD aerodynamics, multiphysics simulation and engineering design. McGill × CentraleSupélec." />
+<meta name="twitter:title" content="Alexandre Fortin-Fabbro | Engineering Portfolio" />
+<meta name="twitter:description" content="Case studies in CFD aerodynamics, stochastic modelling and thermal design." />
 <meta name="twitter:image" content="https://aleforfab.github.io/assets/img/og-cover.jpg" />
 
-<!-- Open Graph card, generated from the live page layout -->
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
 
@@ -36,7 +35,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Alexandre Fortin-Fabbro",
-  "jobTitle": "Engineering Student — Global Engineering",
+  "jobTitle": "First-year Global Engineering student",
   "email": "mailto:alexandre.fortin-fabbro@student-cs.fr",
   "url": "https://aleforfab.github.io/",
   "sameAs": [
@@ -47,7 +46,7 @@
     { "@type": "CollegeOrUniversity", "name": "CentraleSupélec" },
     { "@type": "CollegeOrUniversity", "name": "McGill University" }
   ],
-  "knowsAbout": ["Computational Fluid Dynamics", "Aerodynamics", "Finite Element Analysis", "Multiphysics Simulation", "MATLAB", "Ansys Fluent", "Parametric CAD"]
+  "knowsAbout": ["Computational Fluid Dynamics", "Aerodynamics", "Finite Element Analysis", "Multiphysics Simulation", "MATLAB", "Ansys Fluent", "Parametric CAD", "Markov chains"]
 }
 </script>
 </head>
@@ -57,6 +56,7 @@
 <!-- Icon sprite -->
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6"/></symbol>
   <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
   <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.8 7.3 5.4a2 2 0 0 0 2.4 0l7.3-5.4"/></symbol>
@@ -64,10 +64,6 @@
   <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 20.5c-4 1.2-4-2-5.5-2.5m11 4v-3.7a3.4 3.4 0 0 0-.9-2.6c3-.4 5.9-1.5 5.9-6.6a5.2 5.2 0 0 0-1.4-3.6 4.9 4.9 0 0 0-.1-3.6s-1.1-.4-3.6 1.4a12.4 12.4 0 0 0-6.6 0C4.5 3 3.4 3.4 3.4 3.4a4.9 4.9 0 0 0-.1 3.6A5.2 5.2 0 0 0 1.9 10.6c0 5 2.9 6.2 5.9 6.6a3.4 3.4 0 0 0-.9 2.5V22"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 6V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5.2 5.2L20 7"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="m5.5 5.5 13 13m0-13-13 13"/></symbol>
-  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M15 20h5v-5M9 20H4v-5"/></symbol>
-  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m14.5 5-7 7 7 7"/></symbol>
-  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9.5 5 7 7-7 7"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
   <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M2.5 8.5 12 4l9.5 4.5L12 13 2.5 8.5Z"/><path d="M6 10.6V16c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6v-5.4"/></symbol>
   <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
@@ -83,18 +79,16 @@
       </span>
       <span class="brand__text">
         <strong>A. Fortin-Fabbro</strong>
-        <em>Engineering · CFD</em>
       </span>
     </a>
 
     <nav class="nav" aria-label="Sections">
       <ul class="nav__list">
-        <li><a class="nav__link" href="#study"><span class="nav__num">01</span>Study</a></li>
-        <li><a class="nav__link" href="#work"><span class="nav__num">02</span>Work</a></li>
-        <li><a class="nav__link" href="#capabilities"><span class="nav__num">03</span>Toolkit</a></li>
-        <li><a class="nav__link" href="#credentials"><span class="nav__num">04</span>Credentials</a></li>
-        <li><a class="nav__link" href="#experience"><span class="nav__num">05</span>Experience</a></li>
-        <li><a class="nav__link" href="#contact"><span class="nav__num">06</span>Contact</a></li>
+        <li><a class="nav__link" href="#projects"><span class="nav__num">01</span>Projects</a></li>
+        <li><a class="nav__link" href="#capabilities"><span class="nav__num">02</span>Toolkit</a></li>
+        <li><a class="nav__link" href="#credentials"><span class="nav__num">03</span>Credentials</a></li>
+        <li><a class="nav__link" href="#experience"><span class="nav__num">04</span>Experience</a></li>
+        <li><a class="nav__link" href="#contact"><span class="nav__num">05</span>Contact</a></li>
       </ul>
     </nav>
 
@@ -111,12 +105,11 @@
 
   <div class="mobile-nav" id="mobile-nav" hidden>
     <ul class="mobile-nav__list">
-      <li><a href="#study"><span>01</span>Study</a></li>
-      <li><a href="#work"><span>02</span>Work</a></li>
-      <li><a href="#capabilities"><span>03</span>Toolkit</a></li>
-      <li><a href="#credentials"><span>04</span>Credentials</a></li>
-      <li><a href="#experience"><span>05</span>Experience</a></li>
-      <li><a href="#contact"><span>06</span>Contact</a></li>
+      <li><a href="#projects"><span>01</span>Projects</a></li>
+      <li><a href="#capabilities"><span>02</span>Toolkit</a></li>
+      <li><a href="#credentials"><span>03</span>Credentials</a></li>
+      <li><a href="#experience"><span>04</span>Experience</a></li>
+      <li><a href="#contact"><span>05</span>Contact</a></li>
     </ul>
     <a class="btn btn--primary mobile-nav__cv" href="assets/docs/Alexandre_Fortin_Fabbro_CV.pdf" download>
       <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download résumé (PDF)
@@ -126,421 +119,215 @@
 
 <main id="main">
   <!-- ───────────────────────────── HERO ───────────────────────────── -->
-  <section class="hero" id="top">
+  <section class="hero hero--type" id="top">
     <div class="hero__grid" aria-hidden="true"></div>
-    <div class="shell hero__inner">
-      <div class="hero__copy">
-        <p class="eyebrow">
-          <span class="eyebrow__dot" aria-hidden="true"></span>
-          McGill University&nbsp;×&nbsp;CentraleSupélec — B.Eng. Global Engineering
-        </p>
-        <h1 class="hero__title">Alexandre <br />Fortin&#8209;Fabbro</h1>
-        <p class="hero__lede">
-          I model how air, heat and uncertainty move. Numerical simulation —
-          <strong>CFD aerodynamics</strong>, multiphysics and
-          <strong>stochastic modelling</strong> — turned into decisions an engineer can defend.
-        </p>
+    <div class="shell">
+      <p class="eyebrow">
+        <span class="eyebrow__dot" aria-hidden="true"></span>
+        McGill University&nbsp;×&nbsp;CentraleSupélec · B.Eng. Global Engineering
+      </p>
 
-        <div class="hero__meta">
-          <span><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Gif-sur-Yvette, France</span>
-          <span><svg class="icon" aria-hidden="true"><use href="#i-graduation"/></svg>Class of 2030</span>
-          <span class="hero__status"><i aria-hidden="true"></i>Open to internships</span>
-        </div>
+      <h1 class="hero__title hero__title--xl">Alexandre <br />Fortin&#8209;Fabbro</h1>
 
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#study">
-            Read the CFD study
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-          <a class="btn btn--outline" href="assets/docs/Alexandre_Fortin_Fabbro_CV.pdf" download>
-            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
-            Résumé
-          </a>
-          <a class="btn btn--quiet" href="https://www.linkedin.com/in/alexandre-fortin-fabbro-82b48622b/" target="_blank" rel="noopener noreferrer">
-            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
-            LinkedIn
-            <span class="sr-only">(opens in a new tab)</span>
-          </a>
-        </div>
+      <div class="hero__meta">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Gif-sur-Yvette, France</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-graduation"/></svg>First-year B.Eng. · Class of 2030</span>
+        <span class="hero__status"><i aria-hidden="true"></i>Open to internships</span>
       </div>
 
-      <!-- Interactive flow-field instrument -->
-      <figure class="instrument" aria-labelledby="instrument-caption">
-        <div class="instrument__bar">
-          <span class="instrument__label">Potential-flow field</span>
-          <span class="instrument__readout" data-angle-readout>α = 09.0°</span>
-        </div>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">
+          View projects
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="btn btn--outline" href="assets/docs/Alexandre_Fortin_Fabbro_CV.pdf" download>
+          <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+          Résumé
+        </a>
+        <a class="btn btn--quiet" href="https://www.linkedin.com/in/alexandre-fortin-fabbro-82b48622b/" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+          LinkedIn
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
+      </div>
 
-        <div class="instrument__stage">
-          <canvas id="flow-canvas" width="760" height="420"
-                  role="img"
-                  aria-label="Animated illustration of inviscid streamlines around a cambered airfoil. The streamline pattern changes with the selected angle of incidence."></canvas>
-          <noscript><p class="instrument__fallback">Enable JavaScript for the interactive streamline illustration.</p></noscript>
-        </div>
-
-        <div class="instrument__gauges" aria-hidden="true">
-          <div class="gauge" data-gauge="w1">
-            <div class="gauge__head"><span>Wing 1 · baseline</span><b data-ld-w1>1.13</b></div>
-            <div class="gauge__track"><span class="gauge__fill" data-fill-w1 style="width:76%"></span></div>
-          </div>
-          <div class="gauge gauge--alt" data-gauge="w2">
-            <div class="gauge__head"><span>Wing 2 · vortex generators</span><b data-ld-w2>1.18</b></div>
-            <div class="gauge__track"><span class="gauge__fill" data-fill-w2 style="width:79%"></span></div>
-          </div>
-        </div>
-
-        <div class="instrument__controls" role="group" aria-label="Angle of incidence">
-          <span class="instrument__control-label" id="aoi-label">Incidence</span>
-          <div class="segmented" role="radiogroup" aria-labelledby="aoi-label">
-            <button type="button" class="segmented__btn" role="radio" aria-checked="true" data-aoi="9" tabindex="0">9°</button>
-            <button type="button" class="segmented__btn" role="radio" aria-checked="false" data-aoi="15" tabindex="-1">15°</button>
-            <button type="button" class="segmented__btn" role="radio" aria-checked="false" data-aoi="21" tabindex="-1">21°</button>
-          </div>
-        </div>
-
-        <figcaption class="instrument__caption" id="instrument-caption">
-          Joukowski-transformed profile, inviscid streamlines — an illustration of incidence, not the meshed geometry.
-          <span class="instrument__caption-strong">L/D values are measured Ansys Fluent results.</span>
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="shell">
       <dl class="ticker">
         <div class="ticker__item">
-          <dt>Configurations solved</dt>
-          <dd><span data-count="6">6</span><small>2 wings × 3 incidences</small></dd>
+          <dt>Case studies</dt>
+          <dd><span data-count="3">3</span><small>and growing</small></dd>
         </div>
         <div class="ticker__item">
-          <dt>Finesse gain at 21°</dt>
-          <dd><span data-count="8.1" data-suffix="%" data-sign="+">+8.1%</span><small>L/D vs. baseline</small></dd>
+          <dt>Certifications</dt>
+          <dd><span data-count="9">9</span><small>Ansys · MathWorks · IBM · Google</small></dd>
         </div>
         <div class="ticker__item">
-          <dt>Free-stream velocity</dt>
-          <dd><span data-count="30">30</span><small>m/s inlet condition</small></dd>
+          <dt>Languages</dt>
+          <dd><span data-count="2">2</span><small>French native · English fluent</small></dd>
         </div>
         <div class="ticker__item">
-          <dt>Technical report</dt>
-          <dd><span data-count="10">10</span><small>pages, figures &amp; annexes</small></dd>
+          <dt>Graduating</dt>
+          <dd>2030<small>B.Eng. Global Engineering</small></dd>
         </div>
       </dl>
     </div>
   </section>
 
-  <!-- ───────────────────────── FLAGSHIP STUDY ───────────────────────── -->
-  <section class="section" id="study" aria-labelledby="study-title">
-    <div class="shell">
-      <header class="section__head">
-        <p class="section__index">01 — Flagship study</p>
-        <h2 class="section__title" id="study-title">Vortex generators vs. deep stall</h2>
-        <p class="section__lede">
-          A comparative numerical wind-tunnel study: the same wing profile, twice — clean, then fitted with
-          boundary-layer vortex generators — solved at 9°, 15° and 21° of incidence.
-        </p>
-      </header>
-
-      <div class="study__grid">
-        <div class="study__brief">
-          <h3 class="subhead">The question</h3>
-          <p>
-            Vortex generators are cheap, passive devices bolted onto wings and wind-turbine blades. Do they
-            actually buy anything before the wing stalls — and how much do they buy as it starts to?
-          </p>
-          <p>
-            Six steady-state, pressure-based RANS configurations isolate that answer: lift and drag extracted
-            from Fluent force reports, then cross-checked against pathlines, velocity magnitude and turbulent
-            kinetic energy fields.
-          </p>
-
-          <dl class="facts">
-            <div><dt>Role</dt><dd>Geometry, meshing, solver setup, post-processing — solo</dd></div>
-            <div><dt>Toolchain</dt><dd>Ansys Discovery · Ansys Meshing · Ansys Fluent 2026 R1</dd></div>
-            <div><dt>Flow</dt><dd>External, air, 30 m/s inlet, 0 Pa outlet, steady pressure-based</dd></div>
-            <div><dt>Deliverable</dt><dd>10-page technical report (FR) with force-report appendix</dd></div>
-          </dl>
-
-          <div class="study__actions">
-            <a class="btn btn--primary" href="etude-aerodynamique-cfd.pdf" download>
-              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
-              Download report · PDF
-            </a>
-            <a class="btn btn--quiet" href="#results">Jump to the numbers
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <figure class="hero-figure">
-          <div class="figure-frame">
-            <img src="assets/cfd/pathlines-21-vg.webp" width="363" height="234" decoding="async"
-                 alt="Streamlines around the vortex-generator wing at 21 degrees: flow follows the upper surface with a single contained recirculation near the leading edge." />
-            <button class="zoom" type="button" data-zoom="assets/cfd/pathlines-21-vg.webp" data-zoom-caption="Wing 2 (with vortex generators) at 21° incidence — a single, contained recirculation. Ansys Fluent post-processing." aria-label="Enlarge figure: vortex-generator wing at 21 degrees">
-              <svg class="icon" aria-hidden="true"><use href="#i-expand"/></svg>
-            </button>
-          </div>
-          <figcaption>Wing 2 at 21° — the separation stays a single, contained vortex.</figcaption>
-        </figure>
-      </div>
-
-      <!-- Interactive comparison -->
-      <div class="explorer" aria-labelledby="explorer-title">
-        <div class="explorer__head">
-          <h3 class="subhead subhead--tight" id="explorer-title">Field comparison</h3>
-          <p class="explorer__hint">Pick an incidence and a quantity. Left is the baseline wing, right is the same wing with vortex generators.</p>
-        </div>
-
-        <div class="explorer__controls">
-          <div class="tabs" role="tablist" aria-label="Quantity">
-            <button class="tab" type="button" role="tab" id="tab-pathlines" aria-controls="panel-fields" aria-selected="true" data-quantity="pathlines">Pathlines</button>
-            <button class="tab" type="button" role="tab" id="tab-velocity" aria-controls="panel-fields" aria-selected="false" tabindex="-1" data-quantity="velocity">Velocity</button>
-            <button class="tab" type="button" role="tab" id="tab-tke" aria-controls="panel-fields" aria-selected="false" tabindex="-1" data-quantity="tke">Turb. kinetic energy</button>
-          </div>
-
-          <div class="segmented segmented--sm" role="radiogroup" aria-label="Angle of incidence for field comparison">
-            <button type="button" class="segmented__btn" role="radio" aria-checked="true" data-panel-aoi="09" tabindex="0">9°</button>
-            <button type="button" class="segmented__btn" role="radio" aria-checked="false" data-panel-aoi="15" tabindex="-1">15°</button>
-            <button type="button" class="segmented__btn" role="radio" aria-checked="false" data-panel-aoi="21" tabindex="-1">21°</button>
-          </div>
-        </div>
-
-        <div class="explorer__panels" id="panel-fields" role="tabpanel" aria-labelledby="tab-pathlines" tabindex="0">
-          <figure class="field">
-            <div class="field__tag">Wing 1 — baseline</div>
-            <button class="field__frame" type="button" aria-label="Enlarge baseline field image">
-              <img id="field-img-a" src="assets/cfd/pathlines-09-baseline.webp" width="419" height="224" decoding="async"
-                   alt="Pathlines at 9 degrees around the baseline wing, showing a small leading-edge recirculation." />
-              <span class="field__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
-            </button>
-            <figcaption id="field-cap-a">Small leading-edge vortex already visible at 9°.</figcaption>
-          </figure>
-
-          <figure class="field">
-            <div class="field__tag field__tag--alt">Wing 2 — with VG</div>
-            <button class="field__frame" type="button" aria-label="Enlarge vortex-generator field image">
-              <img id="field-img-b" src="assets/cfd/pathlines-09-vg.webp" width="356" height="189" decoding="async"
-                   alt="Pathlines at 9 degrees around the vortex-generator wing, remaining attached over the whole chord." />
-              <span class="field__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
-            </button>
-            <figcaption id="field-cap-b">Fully attached over the whole chord.</figcaption>
-          </figure>
-        </div>
-        <p class="explorer__status" role="status" aria-live="polite" data-explorer-status>Showing pathlines at 9° incidence.</p>
-      </div>
-
-      <!-- Results -->
-      <div class="results" id="results">
-        <div class="results__head">
-          <h3 class="subhead subhead--tight">Measured performance</h3>
-          <p class="results__note">Force reports projected on (0, 1, 0) for lift and (1, 0, 0) for drag. Finesse is lift ÷ drag, as reported.</p>
-        </div>
-
-        <div class="results__body">
-          <figure class="chart">
-            <figcaption class="chart__caption">
-              <span class="chart__title">Aerodynamic finesse vs. incidence</span>
-              <span class="chart__legend">
-                <span class="legend-item"><i class="legend-line legend-line--solid" aria-hidden="true"></i>Wing 1 — baseline</span>
-                <span class="legend-item"><i class="legend-line legend-line--dashed" aria-hidden="true"></i>Wing 2 — with VG</span>
-              </span>
-            </figcaption>
-            <svg class="chart__svg" viewBox="0 0 560 258" role="img" aria-labelledby="chart-desc">
-              <title id="chart-desc">Line chart of aerodynamic finesse against incidence (lift over drag).  baseline 1.13, 1.64, 1.60 at 9, 15 and 21 degrees; vortex-generator wing 1.18, 1.62, 1.73.</title>
-              <g class="chart__grid">
-                <line x1="76" y1="220" x2="512" y2="220" />
-                <line x1="76" y1="166.7" x2="512" y2="166.7" />
-                <line x1="76" y1="113.3" x2="512" y2="113.3" />
-                <line x1="76" y1="60" x2="512" y2="60" />
-                <line x1="76" y1="20" x2="512" y2="20" />
-              </g>
-              <g class="chart__axis">
-                <text x="62" y="224.5" text-anchor="end">1.0</text>
-                <text x="62" y="171.2" text-anchor="end">1.2</text>
-                <text x="62" y="117.8" text-anchor="end">1.4</text>
-                <text x="62" y="64.5" text-anchor="end">1.6</text>
-                <text x="62" y="24.5" text-anchor="end">1.8</text>
-                <text x="76" y="242" text-anchor="middle">9°</text>
-                <text x="294" y="242" text-anchor="middle">15°</text>
-                <text x="512" y="242" text-anchor="middle">21°</text>
-                <text class="chart__axis-title" x="62" y="10" text-anchor="end">L/D</text>
-              </g>
-              <g class="chart__series chart__series--w1">
-                <polyline points="76,185.3 294,62.7 512,73.3" />
-                <circle cx="76" cy="185.3" r="4.2" />
-                <circle cx="294" cy="62.7" r="4.2" />
-                <circle cx="512" cy="73.3" r="4.2" />
-                <text x="512" y="98" text-anchor="end">1.60</text>
-              </g>
-              <g class="chart__series chart__series--w2">
-                <polyline points="76,168.7 294,68 512,38.7" />
-                <circle cx="76" cy="168.7" r="4.2" />
-                <circle cx="294" cy="68" r="4.2" />
-                <circle cx="512" cy="38.7" r="4.2" />
-                <text x="512" y="28" text-anchor="end">1.73</text>
-              </g>
-              <g class="chart__marker">
-                <line x1="512" y1="38.7" x2="512" y2="73.3" />
-                <text x="497" y="59" text-anchor="end">+8.1%</text>
-              </g>
-            </svg>
-            <p class="chart__foot">The gap opens exactly where it matters: the baseline flattens and drops, the VG wing keeps climbing.</p>
-          </figure>
-
-          <div class="table-wrap">
-            <table class="data">
-              <caption>Force-report results for all six configurations</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Configuration</th>
-                  <th scope="col" class="num">Lift <span>mN</span></th>
-                  <th scope="col" class="num">Drag <span>mN</span></th>
-                  <th scope="col" class="num">L/D</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">Wing 1 — 9°</th><td class="num">0.763</td><td class="num">0.674</td><td class="num">1.13</td></tr>
-                <tr><th scope="row">Wing 1 — 15°</th><td class="num">1.402</td><td class="num">0.856</td><td class="num">1.64</td></tr>
-                <tr><th scope="row">Wing 1 — 21°</th><td class="num">1.782</td><td class="num">1.113</td><td class="num">1.60</td></tr>
-                <tr class="data__alt"><th scope="row">Wing 2 — 9°</th><td class="num">0.803</td><td class="num">0.681</td><td class="num">1.18</td></tr>
-                <tr class="data__alt"><th scope="row">Wing 2 — 15°</th><td class="num">1.385</td><td class="num">0.857</td><td class="num">1.62</td></tr>
-                <tr class="data__alt"><th scope="row">Wing 2 — 21°</th><td class="num">1.992</td><td class="num">1.153</td><td class="num">1.73 <span class="delta">+8.1%</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- Method + findings -->
-      <div class="method">
-        <h3 class="subhead">Method</h3>
-        <ol class="method__steps">
-          <li>
-            <span class="method__step">01</span>
-            <h4>Geometry &amp; domain</h4>
-            <p>Rectangular fluid envelope built around the profile in Ansys Discovery, with shared topology so the wing becomes a conformal internal wall.</p>
-          </li>
-          <li>
-            <span class="method__step">02</span>
-            <h4>Volumetric mesh</h4>
-            <p>3D grid generated in Ansys Meshing, refined near the wall where the boundary layer and the generators live.</p>
-          </li>
-          <li>
-            <span class="method__step">03</span>
-            <h4>Solve &amp; extract</h4>
-            <p>Steady pressure-based solve in Fluent; lift and drag pulled from force reports, fields exported for pathlines, |V| and k.</p>
-          </li>
-        </ol>
-      </div>
-
-      <div class="findings">
-        <h3 class="subhead">What the fields show</h3>
-        <div class="findings__grid">
-          <article class="find">
-            <p class="find__deg">09°</p>
-            <h4>Divergence before the numbers notice</h4>
-            <p>The baseline already carries a small leading-edge recirculation. The VG wing stays attached over the entire chord — a qualitative lead that costs almost nothing in measured forces yet.</p>
-          </article>
-          <article class="find">
-            <p class="find__deg">15°</p>
-            <h4>The transition regime</h4>
-            <p>Both wings now show a comparable leading-edge vortex and near-identical finesse (1.64 vs 1.62). The VG wing is simply one incidence notch late to separate.</p>
-          </article>
-          <article class="find find--key">
-            <p class="find__deg">21°</p>
-            <h4>Where the device earns its keep</h4>
-            <p>The baseline develops a large main vortex plus a secondary one — deep separation. The VG wing keeps a single contained vortex and gains <strong>8.1% finesse</strong> as the baseline begins to drop.</p>
-          </article>
-        </div>
-        <p class="findings__next">
-          <strong>Next steps noted in the report:</strong> extend the sweep to 24°–28° to capture the post-stall lift collapse,
-          and run a mesh-independence study with y⁺ resolution around the generators.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────────────────────────── WORK ───────────────────────────── -->
-  <section class="section section--alt" id="work" aria-labelledby="work-title">
+  <!-- ─────────────────────────── PROJECTS ─────────────────────────── -->
+  <section class="section section--projects" id="projects" aria-labelledby="projects-title">
     <div class="shell">
       <header class="section__head section__head--row">
         <div>
-          <p class="section__index">02 — Selected work</p>
-          <h2 class="section__title" id="work-title">Other things I build</h2>
+          <p class="section__index">01 · Projects</p>
+          <h2 class="section__title" id="projects-title">Case studies</h2>
         </div>
         <p class="section__lede section__lede--narrow">
-          Projects that sit at the seam between mathematics and hardware.
+          Each one opens in full: the question, the method, the measured numbers and the figures.
         </p>
       </header>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card__top">
-            <p class="card__kicker">Stochastic modelling · 2025</p>
-            <h3 class="card__title">Markov-chain market model</h3>
-            <p class="card__desc">
-              Discrete-time Markov chain over bullish, bearish and stagnant regimes. One- and multi-step
-              transition matrices, spectral analysis at λ = 1 for the stationary distribution, and checks on
-              irreducibility and aperiodicity — implemented in Python and MATLAB.
+      <div class="proj-grid">
+        <!-- CFD -->
+        <a class="proj proj--wide" href="projects/cfd-vortex-generators.html">
+          <div class="proj__media">
+            <img src="assets/cfd/pathlines-21-vg.webp" width="923" height="599" loading="eager" decoding="async"
+                 alt="Streamlines around a wing fitted with vortex generators at 21 degrees of incidence." />
+            <span class="proj__badge">Interactive</span>
+          </div>
+          <div class="proj__body">
+            <p class="proj__kicker">Numerical fluid dynamics · 2026</p>
+            <h3 class="proj__title">Vortex generators vs. deep stall</h3>
+            <p class="proj__desc">
+              The same wing profile solved twice, once clean and once with boundary-layer vortex generators,
+              at 9°, 15° and 21° of incidence in Ansys Fluent. Six steady RANS configurations, force
+              reports, and a live streamline model you can drive yourself.
             </p>
-            <ul class="card__points">
-              <li>Stationary behaviour from the left eigenvector at λ = 1</li>
-              <li>Convergence to equilibrium verified numerically</li>
-              <li>Limits of regime models stated explicitly, not assumed</li>
-            </ul>
+            <div class="proj__foot">
+              <ul class="proj__tags">
+                <li class="chip">Ansys Fluent</li>
+                <li class="chip">Meshing</li>
+                <li class="chip">Boundary layer</li>
+              </ul>
+              <span class="proj__cta">Read case study <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </div>
           </div>
-          <div class="card__foot">
-            <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Linear algebra</span>
-          </div>
-        </article>
+        </a>
 
-        <article class="card">
-          <div class="card__top">
-            <p class="card__kicker">Thermal FEA · in progress</p>
-            <h3 class="card__title">Conical pin-fin heat sink</h3>
-            <p class="card__desc">
-              A MATLAB conjugate-heat-transfer engine for a pin-fin heat sink, plus SolidWorks geometry.
-              Where a purely structural FEA under-predicts natural convection, the model substitutes
-              Elenbaas-correlation boundary-layer proxies for the fluid side.
-            </p>
-            <ul class="card__points">
-              <li>Reported mass reduction ≈ 38.5% at a 37.5 °C lower junction temperature</li>
-              <li>Coupling strategy documented as the main limitation</li>
-              <li>Write-up and code release pending</li>
-            </ul>
-          </div>
-          <div class="card__foot">
-            <span class="chip">MATLAB PDE</span><span class="chip">SolidWorks</span><span class="chip">Natural convection</span>
-          </div>
-        </article>
+        <!-- Markov -->
+        <a class="proj" href="projects/markov-market-model.html">
+          <div class="proj__media proj__media--diagram">
+            <svg viewBox="0 0 360 206" role="img" aria-label="Three-state Markov chain: bullish leads to stagnant, stagnant to bearish, and bearish back to bullish, with transition probabilities p12, p23 and p31.">
+              <defs>
+                <marker id="mk-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#8cb6ff"/>
+                </marker>
+              </defs>
 
-        <article class="card card--outline">
-          <div class="card__top">
-            <p class="card__kicker">Currently</p>
-            <h3 class="card__title">Learning in public</h3>
-            <p class="card__desc">
-              Second-year Global Engineering between CentraleSupélec and McGill. Coursework in fluid
-              mechanics, thermodynamics and applied mathematics, with the Ansys and MathWorks certifications
-              below running alongside.
+              <!-- transitions, drawn on their own layer so no arrowhead hides behind a node -->
+              <g fill="none" stroke="#8cb6ff" stroke-width="1.5" stroke-linecap="round" marker-end="url(#mk-arrow)">
+                <path d="M238 38 C 300 38 306 84 302 112"/>
+                <path d="M280 154 C 276 178 240 187 180 187 C 120 187 78 178 74 157"/>
+                <path d="M62 116 C 50 76 76 40 118 40"/>
+              </g>
+
+              <g>
+                <rect x="122" y="26" width="116" height="38" rx="9" fill="#111823" stroke="#3b82f6" stroke-opacity=".7"/>
+                <rect x="244" y="116" width="110" height="38" rx="9" fill="#111823" stroke="#2a3444"/>
+                <rect x="6" y="116" width="110" height="38" rx="9" fill="#111823" stroke="#2a3444"/>
+              </g>
+
+              <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="10" fill="#e8eef7" text-anchor="middle" letter-spacing=".1em">
+                <text x="180" y="50">BULLISH</text>
+                <text x="299" y="140">STAGNANT</text>
+                <text x="61" y="140">BEARISH</text>
+              </g>
+
+              <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="9.5" fill="#8cb6ff" text-anchor="middle">
+                <text x="331" y="72">p₁₂</text>
+                <text x="180" y="198">p₂₃</text>
+                <text x="24" y="82">p₃₁</text>
+              </g>
+            </svg>
+          </div>
+          <div class="proj__body">
+            <p class="proj__kicker">Stochastic modelling · 2025</p>
+            <h3 class="proj__title">Markov-chain market model</h3>
+            <p class="proj__desc">
+              A discrete-time chain over bullish, bearish and stagnant regimes: transition matrices,
+              eigen-analysis at λ = 1 and the long-run stationary distribution.
             </p>
-            <ul class="card__points">
-              <li>Bilingual engineering practice (FR / EN)</li>
-              <li>Comfortable owning a study end-to-end</li>
-            </ul>
+            <div class="proj__foot">
+              <ul class="proj__tags">
+                <li class="chip">Python</li>
+                <li class="chip">MATLAB</li>
+              </ul>
+              <span class="proj__cta">Read case study <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </div>
           </div>
-          <div class="card__foot">
-            <a class="link-arrow" href="#credentials">See the credentials
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
+        </a>
+
+        <!-- Pin-fin -->
+        <a class="proj" href="projects/pin-fin-heat-sink.html">
+          <div class="proj__media proj__media--diagram">
+            <svg viewBox="0 0 320 180" role="img" aria-label="Schematic of a conical pin-fin heat sink: a base plate with tapered fins and heat flowing upward through them.">
+              <defs>
+                <linearGradient id="pf-base" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1b2432"/><stop offset="1" stop-color="#0f1520"/>
+                </linearGradient>
+                <marker id="pf-heat" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#f5b348"/>
+                </marker>
+              </defs>
+              <g stroke="#f59e0b" stroke-opacity=".55" stroke-width="1.2" marker-end="url(#pf-heat)" fill="none">
+                <path d="M76 60V36M112 52V28M160 50V26M208 52V28M244 60V36"/>
+                <path d="M96 40V22M144 34V16M176 34V16M224 40V22" stroke-opacity=".28"/>
+              </g>
+              <g fill="#16202d" stroke="#4b5f79" stroke-width="1.1">
+                <path d="M66 148 L82 74 h12 l10 74 Z"/>
+                <path d="M104 148 L118 66 h12 l8 82 Z"/>
+                <path d="M146 148 L160 62 h12 l8 86 Z"/>
+                <path d="M188 148 L200 66 h12 l10 82 Z"/>
+                <path d="M228 148 L242 74 h12 l8 74 Z"/>
+              </g>
+              <rect x="40" y="146" width="240" height="18" rx="3" fill="url(#pf-base)" stroke="#4b5f79" stroke-width="1.1"/>
+              <g font-family="ui-monospace, monospace" font-size="9" fill="#6b7889">
+                <text x="40" y="176">BASE</text>
+                <text x="280" y="176" text-anchor="end">CONICAL PINS</text>
+              </g>
+              <g font-family="ui-monospace, monospace" font-size="9" fill="#f5b348" letter-spacing=".08em">
+                <text x="40" y="14">HEAT FLUX</text>
+              </g>
+            </svg>
           </div>
-        </article>
+          <div class="proj__body">
+            <p class="proj__kicker">Thermal design · in progress</p>
+            <h3 class="proj__title">Conical pin-fin heat sink</h3>
+            <p class="proj__desc">
+              A MATLAB conjugate-heat-transfer model for a pin-fin heat sink, with Elenbaas correlations
+              standing in for the fluid side where a purely structural FEA falls short.
+            </p>
+            <div class="proj__foot">
+              <ul class="proj__tags">
+                <li class="chip">MATLAB PDE</li>
+                <li class="chip">SolidWorks</li>
+              </ul>
+              <span class="proj__cta">Read overview <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </a>
       </div>
+
+      <p class="proj-note">
+        <span class="proj-note__dot" aria-hidden="true"></span>
+        This section is built to grow: new case studies are added here as they ship.
+      </p>
     </div>
   </section>
 
   <!-- ─────────────────────────── CAPABILITIES ─────────────────────── -->
-  <section class="section" id="capabilities" aria-labelledby="cap-title">
+  <section class="section section--alt" id="capabilities" aria-labelledby="cap-title">
     <div class="shell">
       <header class="section__head">
-        <p class="section__index">03 — Toolkit</p>
+        <p class="section__index">02 · Toolkit</p>
         <h2 class="section__title" id="cap-title">What I can pick up tomorrow</h2>
         <p class="section__lede">
           Grouped by the job each tool does, not by logo count.
@@ -604,17 +391,17 @@
       <div class="languages">
         <span class="languages__label">Languages</span>
         <span class="languages__item"><b>French</b> native</span>
-        <span class="languages__item"><b>English</b> fluent — IB bilingual diploma</span>
+        <span class="languages__item"><b>English</b> fluent, IB bilingual diploma</span>
       </div>
     </div>
   </section>
 
   <!-- ─────────────────────────── CREDENTIALS ──────────────────────── -->
-  <section class="section section--alt" id="credentials" aria-labelledby="cred-title">
+  <section class="section" id="credentials" aria-labelledby="cred-title">
     <div class="shell">
       <header class="section__head section__head--row">
         <div>
-          <p class="section__index">04 — Credentials</p>
+          <p class="section__index">03 · Credentials</p>
           <h2 class="section__title" id="cred-title">Certifications &amp; education</h2>
         </div>
         <p class="section__lede section__lede--narrow">Nine completed programmes across CFD, CAD, data and AI tooling.</p>
@@ -622,60 +409,60 @@
 
       <div class="education">
         <article class="edu">
-          <p class="edu__when">Expected May 2030</p>
+          <p class="edu__when">Expected May 2030 · first year</p>
           <h3 class="edu__what">B.Eng. Global Engineering</h3>
-          <p class="edu__where">CentraleSupélec × McGill University — Gif-sur-Yvette, France</p>
+          <p class="edu__where">CentraleSupélec × McGill University, Gif-sur-Yvette, France</p>
         </article>
         <article class="edu">
           <p class="edu__when">Obtained May 2025</p>
-          <h3 class="edu__what">International Baccalaureate — Sciences, bilingual option</h3>
+          <h3 class="edu__what">International Baccalaureate, Sciences, bilingual option</h3>
           <p class="edu__where">Québec, Canada</p>
         </article>
       </div>
 
       <ul class="certs">
         <li class="cert">
-          <p class="cert__issuer">Ansys</p>
+          <p class="cert__issuer"><span class="cert__mark cert__mark--lockup" aria-hidden="true"><img src="assets/logos/ansys.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>Ansys</p>
           <h3 class="cert__name">Aerodynamics of a STEM Racing Car</h3>
           <p class="cert__topics">External flow · downforce</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">Ansys</p>
+          <p class="cert__issuer"><span class="cert__mark cert__mark--lockup" aria-hidden="true"><img src="assets/logos/ansys.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>Ansys</p>
           <h3 class="cert__name">Dimensional Analysis &amp; Similarity</h3>
           <p class="cert__topics">Buckingham π · scale testing</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">MathWorks</p>
+          <p class="cert__issuer"><span class="cert__mark" aria-hidden="true"><img src="assets/logos/mathworks.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>MathWorks</p>
           <h3 class="cert__name">MATLAB &amp; Simulink Onramp</h3>
           <p class="cert__topics">Algorithm design · dynamic systems</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">MathWorks</p>
+          <p class="cert__issuer"><span class="cert__mark" aria-hidden="true"><img src="assets/logos/mathworks.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>MathWorks</p>
           <h3 class="cert__name">Simscape &amp; Stateflow Onramp</h3>
           <p class="cert__topics">Multiphysics · state machines</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">PTC</p>
+          <p class="cert__issuer"><span class="cert__mark" aria-hidden="true"><img src="assets/logos/ptc.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>PTC</p>
           <h3 class="cert__name">Onshape CAD Fundamentals</h3>
           <p class="cert__topics">Parametric 3D · assemblies</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">IBM SkillsBuild</p>
+          <p class="cert__issuer"><span class="cert__mark cert__mark--lockup" aria-hidden="true"><img src="assets/logos/ibm.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>IBM SkillsBuild</p>
           <h3 class="cert__name">Data Fundamentals</h3>
           <p class="cert__topics">Data analysis · pipelines</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">IBM SkillsBuild</p>
+          <p class="cert__issuer"><span class="cert__mark cert__mark--lockup" aria-hidden="true"><img src="assets/logos/ibm.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>IBM SkillsBuild</p>
           <h3 class="cert__name">Project Management Fundamentals</h3>
           <p class="cert__topics">Agile planning · delivery</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">Anthropic</p>
+          <p class="cert__issuer"><span class="cert__mark" aria-hidden="true"><img src="assets/logos/anthropic.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>Anthropic</p>
           <h3 class="cert__name">Model Context Protocol</h3>
           <p class="cert__topics">Agent systems · tool integration</p>
         </li>
         <li class="cert">
-          <p class="cert__issuer">Google</p>
+          <p class="cert__issuer"><span class="cert__mark" aria-hidden="true"><img src="assets/logos/google.svg" alt="" width="30" height="18" loading="lazy" decoding="async" /></span>Google</p>
           <h3 class="cert__name">AI Essentials</h3>
           <p class="cert__topics">Applied AI · prompt practice</p>
         </li>
@@ -684,20 +471,20 @@
   </section>
 
   <!-- ─────────────────────────── EXPERIENCE ───────────────────────── -->
-  <section class="section" id="experience" aria-labelledby="exp-title">
+  <section class="section section--alt" id="experience" aria-labelledby="exp-title">
     <div class="shell">
       <header class="section__head">
-        <p class="section__index">05 — Experience</p>
+        <p class="section__index">04 · Experience</p>
         <h2 class="section__title" id="exp-title">Work &amp; leadership</h2>
         <p class="section__lede">Operating responsibility taken early, usually in small teams where the work is real.</p>
       </header>
 
       <ol class="timeline">
         <li class="timeline__item">
-          <div class="timeline__when">2022 — present</div>
+          <div class="timeline__when">2022–present</div>
           <div class="timeline__body">
             <h3 class="timeline__role">Vice-President</h3>
-            <p class="timeline__org">Artémis Spiritueux — Québec, Canada</p>
+            <p class="timeline__org">Artémis Spiritueux, Québec, Canada</p>
             <p class="timeline__desc">
               Corporate governance, bookkeeping and regulatory compliance with government bodies. Co-lead
               commercial strategy for product launches, oversee the web platform, and support international
@@ -706,13 +493,13 @@
           </div>
         </li>
         <li class="timeline__item">
-          <div class="timeline__when">Winters 2022 — 2025</div>
+          <div class="timeline__when">Winters 2022–2025</div>
           <div class="timeline__body">
             <h3 class="timeline__role">Snowboard instructor</h3>
-            <p class="timeline__org">Centre de ski Le Relais — Lac-Beauport, Canada</p>
+            <p class="timeline__org">Centre de ski Le Relais, Lac-Beauport, Canada</p>
             <p class="timeline__desc">
               Certified technical instruction and safety management for bilingual groups across every age
-              bracket — pedagogy that has to work on the first attempt, in the cold.
+              bracket, and the pedagogy has to work on the first attempt, in the cold.
             </p>
           </div>
         </li>
@@ -720,7 +507,7 @@
           <div class="timeline__when">Summers 2023 &amp; 2025</div>
           <div class="timeline__body">
             <h3 class="timeline__role">Kitchen operations</h3>
-            <p class="timeline__org">Les Trois Garçons · Pub Murphy · Pub St-Alexandre — Vieux-Québec</p>
+            <p class="timeline__org">Les Trois Garçons · Pub Murphy · Pub St-Alexandre, Vieux-Québec</p>
             <p class="timeline__desc">
               Multi-menu preparation, inventory coordination and station timing under service pressure, with
               strict hygiene standards.
@@ -731,7 +518,7 @@
           <div class="timeline__when">December 2021</div>
           <div class="timeline__body">
             <h3 class="timeline__role">Operations volunteer</h3>
-            <p class="timeline__org">FIS Freestyle Ski World Cup — Le Relais</p>
+            <p class="timeline__org">FIS Freestyle Ski World Cup, Le Relais</p>
             <p class="timeline__desc">
               Jump-site sanitation and perimeter safety during an international World Cup stage.
             </p>
@@ -746,11 +533,11 @@
     <div class="shell">
       <div class="contact">
         <div class="contact__copy">
-          <p class="section__index">06 — Contact</p>
+          <p class="section__index">05 · Contact</p>
           <h2 class="contact__title" id="contact-title">Looking for an intern who already speaks solver.</h2>
           <p class="contact__lede">
             Open to engineering internships and research placements in aerodynamics, simulation or
-            mechanical design — France, Canada, or remote-friendly teams. I answer quickly and I bring the
+            mechanical design, in France, Canada, or with remote-friendly teams. I answer quickly and I bring the
             files.
           </p>
           <div class="contact__actions">
@@ -763,7 +550,6 @@
               <span data-copy-label>Copy address</span>
             </button>
           </div>
-          <p class="contact__alt">Also reachable at <a href="mailto:alexandre.fortin.fabbro.2007@gmail.com">alexandre.fortin.fabbro.2007@gmail.com</a></p>
         </div>
 
         <div class="contact__panel">
@@ -790,10 +576,10 @@
               </a>
             </li>
             <li>
-              <a href="etude-aerodynamique-cfd.pdf" download>
-                <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
-                <span>CFD report<small>Ten pages, French</small></span>
-                <svg class="icon icon--end" aria-hidden="true"><use href="#i-download"/></svg>
+              <a href="projects/cfd-vortex-generators.html">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                <span>Flagship case study<small>CFD report, ten pages</small></span>
+                <svg class="icon icon--end" aria-hidden="true"><use href="#i-arrow-right"/></svg>
               </a>
             </li>
           </ul>
@@ -806,7 +592,7 @@
 
 <footer class="footer">
   <div class="shell footer__inner">
-    <p class="footer__brand">Alexandre Fortin-Fabbro — McGill University × CentraleSupélec</p>
+    <p class="footer__brand">Alexandre Fortin-Fabbro · McGill University × CentraleSupélec</p>
     <p class="footer__meta">© <span data-year>2026</span> · Built as static HTML, CSS and vanilla JS · Hosted on GitHub Pages</p>
     <a class="footer__top" href="#top">Back to top
       <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
@@ -814,26 +600,6 @@
   </div>
 </footer>
 
-<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
-  <div class="lightbox__chrome">
-    <p class="lightbox__label">Figure</p>
-    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close figure">
-      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
-    </button>
-  </div>
-  <img id="lightbox-img" src="" alt="" width="900" height="500" />
-  <p class="lightbox__caption" id="lightbox-caption"></p>
-  <div class="lightbox__nav">
-    <button type="button" class="btn btn--quiet btn--sm" data-lightbox-prev>
-      <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg> Previous
-    </button>
-    <button type="button" class="btn btn--quiet btn--sm" data-lightbox-next>
-      Next <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
-    </button>
-  </div>
-</dialog>
-
-<script src="assets/js/flow.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
